@@ -1,9 +1,9 @@
 import Message from "./utilities.js";
 
 const data = {
+  links: ["home", "projects", "about", "contact", "messages "],
   header: {
     logo: "ITPortfolio",
-    navbar: ["home", "projects", "about", "contact", "messages "],
     description: {
       home: {
         h1: "Jan Kowalski",
