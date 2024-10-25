@@ -1,3 +1,4 @@
 - years of experience in technologies could be dynamically computed based on year of beginning of learning
 - footer could be sticked to bottom
 - move Message class and errors objects to separate files
+- will generated div apply style? (blurred div)
