@@ -17,7 +17,7 @@ const renderLogo = function () {
 };
 
 const renderMenu = function () {
-  const menuDiv = document.querySelector(".header-mobile-menu");
+  const menuDiv = document.querySelector(".header-menu");
   const menuList = document.createElement("ul");
   menuDiv.appendChild(menuList);
   const links = data.links;

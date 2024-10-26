@@ -2,3 +2,4 @@
 - footer could be sticked to bottom
 - move Message class and errors objects to separate files
 - will generated div apply style? (blurred div)
+- move tests (input length etc.) to separate module
