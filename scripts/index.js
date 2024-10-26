@@ -2,11 +2,12 @@ import data from "./portfolio_data.js";
 import errors from "./errors.js";
 import Message from "./utilities.js";
 
-let currentPage = "home ";
+let currentPage = "home";
 let mobileMenuOpened = false;
 
 const render = function () {
   renderHeader();
+  renderMain(currentPage);
 };
 
 const renderHeader = function () {
