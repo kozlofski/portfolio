@@ -64,7 +64,17 @@ const renderMain = function (currentPage) {
   }
 };
 
-const renderHome = function () {};
+const renderHome = function () {
+  const mainContainer = document.querySelector(".main-container");
+  const photoDiv = document.createElement("img");
+  const imgUrl = "../img/man.jpeg";
+  mainContainer.appendChild(photoDiv);
+  //   photoDiv.backgroundImage = `url(${imgUrl})`;
+  photoDiv.setAttribute("background-image", imgUrl);
+  photoDiv.height = 200;
+  photoDiv.width = 100;
+};
+
 const renderProjects = function () {};
 const renderAbout = function () {};
 const renderContact = function () {};
