@@ -17,7 +17,7 @@ const data = {
         h1: "About Me",
         p: "it's a-me, Jan!",
       },
-      contactMe: {
+      contact: {
         h1: "Contact Me",
         p: "say hello to me",
       },
