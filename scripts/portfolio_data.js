@@ -13,7 +13,7 @@ const data = {
         h1: "My Projects",
         p: "made with love",
       },
-      aboutMe: {
+      about: {
         h1: "About Me",
         p: "it's a-me, Jan!",
       },
