@@ -2,6 +2,8 @@ import data from "./portfolio_data.js";
 import errors from "./errors.js";
 import Message from "./utilities.js";
 
+let currentPage = "home";
+
 const render = function () {
   renderHeader();
 };
@@ -9,6 +11,7 @@ const render = function () {
 const renderHeader = function () {
   renderLogo();
   renderMenu();
+  renderHeaderDescription(currentPage);
 };
 
 const renderLogo = function () {
@@ -26,6 +29,17 @@ const renderMenu = function () {
     item.innerText = link;
     menuList.appendChild(item);
   }
+};
+
+const renderHeaderDescription = function (currentPage) {
+  const h1 = document.querySelector("h1");
+  const p = document.querySelector(".h1-description");
+
+  const h1Content = data.header.description[currentPage].h1;
+  const pContent = data.header.description[currentPage].p;
+
+  h1.innerText = h1Content;
+  p.innerText = pContent;
 };
 
 render();
