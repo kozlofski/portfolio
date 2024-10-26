@@ -7,7 +7,7 @@ const data = {
     description: {
       home: {
         h1: "Jan Kowalski",
-        p: "web-designer",
+        p: "web - designer",
       },
       projects: {
         h1: "My Projects",
