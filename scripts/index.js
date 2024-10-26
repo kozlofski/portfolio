@@ -34,14 +34,40 @@ const renderMenu = function () {
 };
 
 const renderHeaderDescription = function (currentPage) {
-  const h1 = document.querySelector("h1");
-  const p = document.querySelector(".h1-description");
+  const h1Element = document.querySelector("h1");
+  const pElement = document.querySelector(".h1-description");
 
   const h1Content = data.header.description[currentPage].h1;
   const pContent = data.header.description[currentPage].p;
 
-  h1.innerText = h1Content;
-  p.innerText = pContent;
+  h1Element.innerText = h1Content;
+  pElement.innerText = pContent;
 };
+
+const renderMain = function (currentPage) {
+  switch (currentPage) {
+    case "home":
+      renderHome();
+      break;
+    case "projects":
+      renderProjects();
+      break;
+    case "about":
+      renderAbout();
+      break;
+    case "contact":
+      renderContact();
+      break;
+    case "messages":
+      renderMessages();
+      break;
+  }
+};
+
+const renderHome = function () {};
+const renderProjects = function () {};
+const renderAbout = function () {};
+const renderContact = function () {};
+const renderMessages = function () {};
 
 render();
