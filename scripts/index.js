@@ -36,6 +36,7 @@ const renderMenu = function () {
     item.innerText = link;
     menuList.appendChild(item);
   }
+  menuDiv.style.display = "none";
 };
 
 const renderHeaderDescription = function (currentPage) {
