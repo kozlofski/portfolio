@@ -198,9 +198,17 @@ const renderYearsIndicator = function (years, container) {
 };
 
 const renderProjectsCarousel = function (container) {
-  const projectsContainer = document.createElement("ul");
-  container.appendChild(projectsContainer);
-  projectsContainer.classList.add("projects-container");
+  let projectsContainer = null;
+  const oldProjectsContainer = document.querySelector(".projects-container");
+
+  if (oldProjectsContainer === null) {
+    projectsContainer = document.createElement("ul");
+    container.appendChild(projectsContainer);
+    projectsContainer.classList.add("projects-container");
+  } else {
+    projectsContainer = oldProjectsContainer;
+    projectsContainer.innerHTML = "";
+  }
 
   const projectsList = data.main.projects;
   const projectsListShifted = projectsList
@@ -241,33 +249,38 @@ const renderProjectButtons = function (container) {
   container.appendChild(buttonsContainer);
 
   renderProjectSwitcherButton(
-    "prev",
+    '<i class="fa-solid fa-arrow-left"></i>',
     "prev-proj-btn",
     (e) => {
       currentProject--;
       if (currentProject < 0) currentProject = totalProjects;
-      renderHome(); // @TODO this should render only projects
+      renderProjectsCarousel(container.parentNode); // @TODO this should render only projects
     },
     buttonsContainer
   );
   renderProjectSwitcherButton(
-    "next",
+    '<i class="fa-solid fa-arrow-right"></i>',
     "next-proj-btn",
     (e) => {
       currentProject++;
       if (currentProject > totalProjects - 1) currentProject = 0;
-      renderHome(); // @TODO this should render only projects
+      renderProjectsCarousel(container.parentNode); // @TODO this should render only projects
     },
     buttonsContainer
   );
 };
 
 // @TODO change name parameter to arrow somehow
-const renderProjectSwitcherButton = function (name, className, fun, container) {
+const renderProjectSwitcherButton = function (
+  content,
+  className,
+  fun,
+  container
+) {
   const newButton = document.createElement("button");
   newButton.classList.add(className);
   newButton.classList.add("switch-proj-btn");
-  newButton.innerText = name;
+  newButton.innerHTML = content;
   newButton.addEventListener("click", fun);
   container.appendChild(newButton);
 };
