@@ -38,6 +38,10 @@ const data = {
         h2: "My Skills",
         skillList: [
           {
+            tech: "html",
+            exp: 4,
+          },
+          {
             tech: "css",
             exp: 2,
           },
@@ -46,23 +50,23 @@ const data = {
             exp: 2,
           },
           {
-            tech: "java",
-            exp: 4,
-          },
-          {
-            tech: "c++",
-            exp: 1,
-          },
-          {
             tech: "git",
             exp: 4,
           },
           {
-            tech: "vscode",
+            tech: "figma",
+            exp: 1,
+          },
+          {
+            tech: "chrome",
             exp: 3,
           },
           {
-            tech: "figma",
+            tech: "vscode",
+            exp: 1,
+          },
+          {
+            tech: "github",
             exp: 1,
           },
         ],
