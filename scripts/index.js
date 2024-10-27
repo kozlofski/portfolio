@@ -68,6 +68,7 @@ const renderHome = function () {
   const mainContainer = document.querySelector(".main-container");
   renderMainPhoto(mainContainer);
   renderAboutMe(mainContainer);
+  renderSkills(mainContainer);
 };
 
 const renderMainPhoto = function (container) {
@@ -91,6 +92,20 @@ const renderAboutMe = function (container) {
   pElement.innerText = data.main.home.aboutMe.p;
   aboutMeDiv.appendChild(pElement);
 };
+
+const renderSkills = function (container) {
+  const skillsDiv = document.createElement("div");
+  skillsDiv.classList.add("skills");
+  container.appendChild(skillsDiv);
+
+  const h2Element = document.createElement("h2");
+  h2Element.innerText = data.main.home.skills.h2;
+  skillsDiv.appendChild(h2Element);
+
+  renderSKillList(skillsDiv);
+};
+
+const renderSKillList = function (skillsDiv) {};
 
 const renderProjects = function () {};
 const renderAbout = function () {};
