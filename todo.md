@@ -5,3 +5,4 @@
 - move tests (input length etc.) to separate module
 - move render functions to separate modules
 - rename currentProject variable to more descriptive name
+- unify button class names

@@ -13,7 +13,7 @@ const render = function () {
   renderFooter();
 };
 
-const renderSubPage = function () {
+const renderOnPageChange = function () {
   renderMenu();
   renderHeaderDescription(currentPage);
   renderMain(currentPage);
@@ -71,7 +71,7 @@ const renderMenu = function () {
       currentPage = link;
       console.log("switching to", currentPage);
       toggleMobileMenu();
-      renderSubPage();
+      renderOnPageChange();
       // render();
     });
   }
