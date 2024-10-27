@@ -4,6 +4,8 @@ import Message from "./utilities.js";
 
 let currentPage = "home";
 let mobileMenuOpened = false;
+let totalProjects = data.main.projects.length;
+let currentProject = 0;
 
 const render = function () {
   renderHeader();
