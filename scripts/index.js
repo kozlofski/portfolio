@@ -105,7 +105,24 @@ const renderSkills = function (container) {
   renderSKillList(skillsDiv);
 };
 
-const renderSKillList = function (skillsDiv) {};
+const renderSKillList = function (skillsDiv) {
+  const skillList = document.createElement("ul");
+  skillList.classList.add("skill-list");
+  skillsDiv.appendChild(skillList);
+
+  const skillsData = data.main.home.skills.skillList;
+
+  skillsData.forEach((skill) => renderSkill(skill, skillList));
+};
+
+const renderSkill = function (skill, skillList) {
+  const skillListItem = document.createElement("li");
+  const icon = document.createElement("img");
+  const iconUrl = `./svg/${skill.tech}.svg`;
+  icon.src = iconUrl;
+  skillListItem.appendChild(icon);
+  skillList.appendChild(skillListItem);
+};
 
 const renderProjects = function () {};
 const renderAbout = function () {};
