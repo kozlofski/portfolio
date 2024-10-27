@@ -65,6 +65,10 @@ const renderMain = function (currentPage) {
 };
 
 const renderHome = function () {
+  renderMainPhoto();
+};
+
+const renderMainPhoto = function () {
   const mainContainer = document.querySelector(".main-container");
   const photoDiv = document.createElement("div");
   const imgUrl = data.main.home.aboutMe.photoUrl;
