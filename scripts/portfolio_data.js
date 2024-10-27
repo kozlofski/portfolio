@@ -1,7 +1,7 @@
 import Message from "./utilities.js";
 
 const data = {
-  links: ["home", "projects", "about", "contact", "messages "],
+  links: ["home", "projects", "about", "contact", "messages"],
   header: {
     logo: "ITPortfolio",
     description: {
