@@ -36,7 +36,7 @@ const data = {
       },
       skills: {
         h2: "My Skills",
-        skills: [
+        skillList: [
           {
             tech: "css",
             exp: 2,
