@@ -218,7 +218,7 @@ const renderProjectsCarousel = function (container) {
   if (oldProjectsContainer === null) {
     projectsContainer = document.createElement("ul");
     container.appendChild(projectsContainer);
-    projectsContainer.classList.add("projects-container");
+    projectsContainer.classList.add("projects-carousel");
   } else {
     projectsContainer = oldProjectsContainer;
     projectsContainer.innerHTML = "";
