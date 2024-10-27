@@ -65,16 +65,16 @@ const renderMain = function (currentPage) {
 };
 
 const renderHome = function () {
-  renderMainPhoto();
+  const mainContainer = document.querySelector(".main-container");
+  renderMainPhoto(mainContainer);
 };
 
-const renderMainPhoto = function () {
-  const mainContainer = document.querySelector(".main-container");
+const renderMainPhoto = function (container) {
   const photoDiv = document.createElement("div");
   const imgUrl = data.main.home.aboutMe.photoUrl;
-  mainContainer.appendChild(photoDiv);
   photoDiv.style.backgroundImage = `url(${imgUrl})`;
   photoDiv.classList.add("main-photo");
+  container.appendChild(photoDiv);
 };
 
 const renderProjects = function () {};
