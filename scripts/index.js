@@ -132,11 +132,29 @@ const renderIcon = function (skill, skillListItem) {
 
 const renderSkillDescription = function (skill, skillListItem) {
   const skillDescriptionDiv = document.createElement("div");
+  skillDescriptionDiv.classList.add("skill-description");
   const h3Element = document.createElement("h3");
   h3Element.innerText = skill.tech;
   skillDescriptionDiv.appendChild(h3Element);
 
+  renderYearsIndicator(skill, skillDescriptionDiv);
+
   skillListItem.appendChild(skillDescriptionDiv);
+};
+
+const renderYearsIndicator = function (skill, container) {
+  const indicatorElement = document.createElement("div");
+  indicatorElement.classList.add("indicator");
+  const years = skill.exp;
+
+  for (let i = 1; i <= 5; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("indicator-dot");
+    if (i <= years) dot.classList.add("indicator-dot-fill");
+    indicatorElement.appendChild(dot);
+  }
+
+  container.appendChild(indicatorElement);
 };
 
 const renderProjects = function () {};
