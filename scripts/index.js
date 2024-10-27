@@ -13,6 +13,13 @@ const render = function () {
   renderFooter();
 };
 
+const renderSubPage = function () {
+  renderMenu();
+  renderHeaderDescription(currentPage);
+  renderMain(currentPage);
+  // renderFooterMenu() desktop
+};
+
 // === HEADER ===
 
 const renderHeader = function () {
@@ -30,29 +37,29 @@ const renderLogo = function (container) {
 const burger = function () {
   const burger = document.querySelector(".fa-bars");
   burger.addEventListener("click", (e) => {
-    if (mobileMenuOpened) {
-      mobileMenuOpened = false;
-    } else {
-      mobileMenuOpened = true;
-    }
-    burger.classList.toggle("menu-opened");
     toggleMobileMenu();
   });
 };
 
 const toggleMobileMenu = function () {
+  const burger = document.querySelector(".fa-bars");
   const menuDiv = document.querySelector(".header-menu");
   if (mobileMenuOpened) {
-    menuDiv.style.display = "block";
-  } else {
+    mobileMenuOpened = false;
     menuDiv.style.display = "none";
+    burger.classList.remove("menu-opened");
+  } else {
+    mobileMenuOpened = true;
+    menuDiv.style.display = "block";
+    burger.classList.add("menu-opened");
   }
+  console.log(mobileMenuOpened);
 };
 
 const renderMenu = function () {
   const menuDiv = document.querySelector(".header-menu");
   menuDiv.style.display = "none";
-  menuDiv;
+  menuDiv.innerHTML = "";
   const menuList = document.createElement("ul");
   menuDiv.appendChild(menuList);
   const links = data.links;
@@ -62,11 +69,12 @@ const renderMenu = function () {
     menuList.appendChild(item);
     item.addEventListener("click", function (e) {
       currentPage = link;
-      console.log(currentPage);
+      console.log("switching to", currentPage);
+      toggleMobileMenu();
+      renderSubPage();
       // render();
     });
   }
-  toggleMobileMenu();
 };
 
 const renderHeaderDescription = function (currentPage) {
