@@ -17,6 +17,7 @@ const render = function () {
 
 const renderHeader = function () {
   renderLogo(".header-logo");
+  burger();
   renderMenu();
   renderHeaderDescription(currentPage);
 };
@@ -26,8 +27,32 @@ const renderLogo = function (container) {
   logo.innerText = data.header.logo;
 };
 
+const burger = function () {
+  const burger = document.querySelector(".fa-bars");
+  burger.addEventListener("click", (e) => {
+    if (mobileMenuOpened) {
+      mobileMenuOpened = false;
+    } else {
+      mobileMenuOpened = true;
+    }
+    burger.classList.toggle("menu-opened");
+    toggleMobileMenu();
+  });
+};
+
+const toggleMobileMenu = function () {
+  const menuDiv = document.querySelector(".header-menu");
+  if (mobileMenuOpened) {
+    menuDiv.style.display = "block";
+  } else {
+    menuDiv.style.display = "none";
+  }
+};
+
 const renderMenu = function () {
   const menuDiv = document.querySelector(".header-menu");
+  menuDiv.style.display = "none";
+  menuDiv;
   const menuList = document.createElement("ul");
   menuDiv.appendChild(menuList);
   const links = data.links;
@@ -36,7 +61,6 @@ const renderMenu = function () {
     item.innerText = link;
     menuList.appendChild(item);
   }
-  menuDiv.style.display = "none";
 };
 
 const renderHeaderDescription = function (currentPage) {
@@ -49,6 +73,8 @@ const renderHeaderDescription = function (currentPage) {
   h1Element.innerText = h1Content;
   pElement.innerText = pContent;
 };
+
+// MAIN
 
 const renderMain = function (currentPage) {
   switch (currentPage) {
@@ -252,6 +278,9 @@ const renderContact = function () {};
 const renderMessages = function () {};
 
 const renderFooter = function () {
+  if (window.innerWidth >= 768) {
+    // @TODO render links in desktop
+  }
   const footerEmail = document.querySelector(".email");
   footerEmail.innerText = data.footer.email;
   const footerPhone = document.querySelector(".phone");

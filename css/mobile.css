@@ -17,6 +17,14 @@ header, footer {
     height: 500px;
 }
 
+.fa-bars {
+    color: var(--white);
+}
+
+.menu-opened {
+    color: var(--gold);
+}
+
 /* === MAIN === */
 
 /* --- home --- */
