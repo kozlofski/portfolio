@@ -303,10 +303,27 @@ const renderProjectSwitcherButton = function (
 const renderProjects = function () {
   const mainContainer = document.querySelector(".main-container");
   mainContainer.innerHTML = "";
+
+  const addProjectButton = document.createElement("button");
+  addProjectButton.innerText = "+ Add project";
+  // @TODO '+' sign should be separate <span> probably
+  addProjectButton.classList.add("add-project-btn");
+  mainContainer.appendChild(addProjectButton);
+
+  const projectsContainer = document.createElement("div");
+  projectsContainer.classList.add("projects-container");
+  mainContainer.appendChild(projectsContainer);
+
+  const projectsList = data.main.projects;
+  projectsList.forEach((project) =>
+    renderProjectCard(project, projectsContainer)
+  );
 };
 const renderAbout = function () {};
 const renderContact = function () {};
 const renderMessages = function () {};
+
+// === FOOTER ===
 
 const renderFooter = function () {
   if (window.innerWidth >= 768) {
