@@ -60,6 +60,10 @@ const renderMenu = function () {
     const item = document.createElement("li");
     item.innerText = link;
     menuList.appendChild(item);
+    item.addEventListener("click", function (e) {
+      currentPage = link;
+      console.log(currentPage);
+    });
   }
 };
 
