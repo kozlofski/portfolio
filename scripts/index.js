@@ -13,7 +13,7 @@ const render = function () {
   renderFooter();
 };
 
-// HEADER
+// === HEADER ===
 
 const renderHeader = function () {
   renderLogo(".header-logo");
@@ -63,8 +63,10 @@ const renderMenu = function () {
     item.addEventListener("click", function (e) {
       currentPage = link;
       console.log(currentPage);
+      // render();
     });
   }
+  toggleMobileMenu();
 };
 
 const renderHeaderDescription = function (currentPage) {
@@ -78,7 +80,7 @@ const renderHeaderDescription = function (currentPage) {
   pElement.innerText = pContent;
 };
 
-// MAIN
+// === MAIN ===
 
 const renderMain = function (currentPage) {
   switch (currentPage) {
@@ -100,7 +102,7 @@ const renderMain = function (currentPage) {
   }
 };
 
-// HOME
+// --- HOME ---
 
 const renderHome = function () {
   const mainContainer = document.querySelector(".main-container");
@@ -274,7 +276,6 @@ const renderProjectButtons = function (container) {
   );
 };
 
-// @TODO change name parameter to arrow somehow
 const renderProjectSwitcherButton = function (
   content,
   className,
@@ -289,7 +290,12 @@ const renderProjectSwitcherButton = function (
   container.appendChild(newButton);
 };
 
-const renderProjects = function () {};
+// --- PROJECTS ---
+
+const renderProjects = function () {
+  const mainContainer = document.querySelector(".main-container");
+  mainContainer.innerHTML = "";
+};
 const renderAbout = function () {};
 const renderContact = function () {};
 const renderMessages = function () {};
