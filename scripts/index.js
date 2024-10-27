@@ -16,13 +16,13 @@ const render = function () {
 // HEADER
 
 const renderHeader = function () {
-  renderLogo();
+  renderLogo(".header-logo");
   renderMenu();
   renderHeaderDescription(currentPage);
 };
 
-const renderLogo = function () {
-  const logo = document.querySelector(".header-logo");
+const renderLogo = function (container) {
+  const logo = document.querySelector(container);
   logo.innerText = data.header.logo;
 };
 
@@ -255,8 +255,7 @@ const renderFooter = function () {
   footerEmail.innerText = data.footer.email;
   const footerPhone = document.querySelector(".phone");
   footerPhone.innerText = data.footer.tel;
-  const logo = document.querySelector(".footer-logo");
-  logo.innerText = data.footer.logo;
+  renderLogo(".footer-logo");
   const copyright = document.querySelector(".copyright");
   const copyrightMark = '<i class="fa-regular fa-copyright"></i>';
   copyright.innerHTML = `${copyrightMark}${data.footer.year}`;
