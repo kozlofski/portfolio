@@ -30,6 +30,7 @@ const data = {
   main: {
     home: {
       aboutMe: {
+        photoUrl: "./../img/man.jpeg",
         h2: "About me",
         p: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit facilis assumenda asperiores, explicabo culpa quis delectus aliquid distinctio eos ratione sed, omnis ducimus excepturi placeat eaque cupiditate, cum nulla. Quis.",
       },

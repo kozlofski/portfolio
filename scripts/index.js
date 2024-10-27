@@ -66,13 +66,11 @@ const renderMain = function (currentPage) {
 
 const renderHome = function () {
   const mainContainer = document.querySelector(".main-container");
-  const photoDiv = document.createElement("img");
-  const imgUrl = "../img/man.jpeg";
+  const photoDiv = document.createElement("div");
+  const imgUrl = data.main.home.aboutMe.photoUrl;
   mainContainer.appendChild(photoDiv);
-  //   photoDiv.backgroundImage = `url(${imgUrl})`;
-  photoDiv.setAttribute("background-image", imgUrl);
-  photoDiv.height = 200;
-  photoDiv.width = 100;
+  photoDiv.style.backgroundImage = `url(${imgUrl})`;
+  photoDiv.classList.add("main-photo");
 };
 
 const renderProjects = function () {};
