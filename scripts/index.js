@@ -67,6 +67,7 @@ const renderMain = function (currentPage) {
 const renderHome = function () {
   const mainContainer = document.querySelector(".main-container");
   renderMainPhoto(mainContainer);
+  renderAboutMe(mainContainer);
 };
 
 const renderMainPhoto = function (container) {
@@ -75,6 +76,20 @@ const renderMainPhoto = function (container) {
   photoDiv.style.backgroundImage = `url(${imgUrl})`;
   photoDiv.classList.add("main-photo");
   container.appendChild(photoDiv);
+};
+
+const renderAboutMe = function (container) {
+  const aboutMeDiv = document.createElement("div");
+  aboutMeDiv.classList.add("about-me");
+  container.appendChild(aboutMeDiv);
+
+  const h2Element = document.createElement("h2");
+  h2Element.innerText = data.main.home.aboutMe.h2;
+  aboutMeDiv.appendChild(h2Element);
+
+  const pElement = document.createElement("p");
+  pElement.innerText = data.main.home.aboutMe.p;
+  aboutMeDiv.appendChild(pElement);
 };
 
 const renderProjects = function () {};
