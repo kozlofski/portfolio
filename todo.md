@@ -6,3 +6,4 @@
 - move render functions to separate modules
 - rename currentProject variable to more descriptive name
 - unify button class names
+- rethink class names for subcontainers

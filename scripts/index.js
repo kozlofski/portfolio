@@ -2,7 +2,7 @@ import data from "./portfolio_data.js";
 import errors from "./errors.js";
 import Message from "./utilities.js";
 
-let currentPage = "home";
+let currentPage = "about";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let currentProject = 0;
@@ -319,7 +319,42 @@ const renderProjects = function () {
     renderProjectCard(project, projectsContainer)
   );
 };
-const renderAbout = function () {};
+
+// --- ABOUT ---
+
+const renderAbout = function () {
+  const mainContainer = document.querySelector(".main-container");
+  mainContainer.innerHTML = "";
+  renderMainPhoto(mainContainer);
+
+  renderArticle("background", mainContainer);
+  renderArticle("hobbies", mainContainer);
+
+  const contactMeButton = document.createElement("button");
+  contactMeButton.classList.add("contactme-button");
+  contactMeButton.innerText = "Contact me";
+  contactMeButton.addEventListener("click", (e) => {
+    currentPage = "contact";
+    renderOnPageChange();
+  });
+  mainContainer.appendChild(contactMeButton);
+};
+
+const renderArticle = function (topic, container) {
+  const newArticle = document.createElement("article");
+  newArticle.classList.add(`my-${topic}-article`);
+
+  const h2 = document.createElement("h2");
+  newArticle.appendChild(h2);
+  h2.innerText = data.main.aboutMe[topic].h2;
+
+  const p = document.createElement("p");
+  newArticle.appendChild(p);
+  p.innerText = data.main.aboutMe[topic].p;
+
+  container.appendChild(newArticle);
+};
+
 const renderContact = function () {};
 const renderMessages = function () {};
 
