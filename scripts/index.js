@@ -69,6 +69,7 @@ const renderHome = function () {
   renderMainPhoto(mainContainer);
   renderAboutMe(mainContainer);
   renderSkills(mainContainer);
+  renderProjectsCarousel(mainContainer);
 };
 
 const renderMainPhoto = function (container) {
@@ -159,6 +160,40 @@ const renderYearsIndicator = function (years, container) {
   }
 
   container.appendChild(indicatorElement);
+};
+
+const renderProjectsCarousel = function (container) {
+  const projectsContainer = document.createElement("ul");
+  projectsContainer.classList.add("projects-container");
+  container.appendChild(projectsContainer);
+
+  const projectsList = data.main.projects;
+  projectsList.forEach((project) =>
+    renderProjectCard(project, projectsContainer)
+  );
+
+  renderProjectButtons(projectsContainer);
+};
+
+const renderProjectCard = function (project, container) {
+  const projectCard = document.createElement("li");
+  projectCard.classList.add("project-card");
+
+  const projectH3 = document.createElement("h3");
+  projectH3.innerText = project.name;
+  projectCard.appendChild(projectH3);
+
+  const techList = document.createElement("ul");
+  projectCard.appendChild(techList);
+
+  const techs = project.techs;
+  techs.forEach((tech) => {
+    const item = document.createElement("li");
+    item.innerText = tech;
+    techList.appendChild(item);
+  });
+
+  container.appendChild(projectCard);
 };
 
 const renderProjects = function () {};

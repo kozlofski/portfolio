@@ -47,6 +47,13 @@ header, footer {
     background-color: var(--valhalla);
 }
 
+.project-card {
+    width: 300px;
+    height: 460px;
+    background-image: url(./../img/project-bg.jpeg);
+    color: var(--white);
+}
+
 /* === FOOTER === */
 
 .footer-container {

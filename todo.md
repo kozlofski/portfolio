@@ -4,3 +4,4 @@
 - will generated div apply style? (blurred div)
 - move tests (input length etc.) to separate module
 - move render functions to separate modules
+- rename currentProject variable to more descriptive name
