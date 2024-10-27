@@ -117,11 +117,21 @@ const renderSKillList = function (skillsDiv) {
 
 const renderSkill = function (skill, skillList) {
   const skillListItem = document.createElement("li");
+  renderIcon(skill, skillListItem);
+  renderSkillDescription(skill, skillListItem);
+
+  skillList.appendChild(skillListItem);
+};
+
+const renderIcon = function (skill, skillListItem) {
   const icon = document.createElement("img");
-  const iconUrl = `./svg/${skill.tech}.svg`;
+  const iconUrl = `./svg/${skill.tech.toLowerCase()}.svg`;
   icon.src = iconUrl;
   skillListItem.appendChild(icon);
-  skillList.appendChild(skillListItem);
+};
+
+const renderSkillDescription = function (skill, skillListItem) {
+  const h3Element = document.createElement("h3");
 };
 
 const renderProjects = function () {};
