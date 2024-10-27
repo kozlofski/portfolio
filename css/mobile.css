@@ -49,7 +49,7 @@ header, footer {
 
 .project-card {
     width: 300px;
-    height: 460px;
+    height: 160px;
     background-image: url(./../img/project-bg.jpeg);
     color: var(--white);
 }

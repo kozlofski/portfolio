@@ -68,6 +68,7 @@ const renderMain = function (currentPage) {
 
 const renderHome = function () {
   const mainContainer = document.querySelector(".main-container");
+  mainContainer.innerHTML = "";
   renderMainPhoto(mainContainer);
   renderAboutMe(mainContainer);
   renderSkills(mainContainer);
@@ -165,12 +166,24 @@ const renderYearsIndicator = function (years, container) {
 };
 
 const renderProjectsCarousel = function (container) {
-  const projectsContainer = document.createElement("ul");
-  projectsContainer.classList.add("projects-container");
-  container.appendChild(projectsContainer);
+  const oldProjectsContainer = document.querySelector(".projects-container");
+  let projectsContainer = null;
+
+  if (oldProjectsContainer !== null) {
+    projectsContainer = oldProjectsContainer;
+    projectsContainer.innerHTML = "";
+  } else {
+    projectsContainer = document.createElement("ul");
+    container.appendChild(projectsContainer);
+    projectsContainer.classList.add("projects-container");
+  }
 
   const projectsList = data.main.projects;
-  projectsList.forEach((project) =>
+  const projectsListShifted = projectsList
+    .slice(currentProject)
+    .concat(projectsList.slice(0, currentProject));
+
+  projectsListShifted.forEach((project) =>
     renderProjectCard(project, projectsContainer)
   );
 
@@ -196,6 +209,43 @@ const renderProjectCard = function (project, container) {
   });
 
   container.appendChild(projectCard);
+};
+
+const renderProjectButtons = function (container) {
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("project-btns-container");
+  container.appendChild(buttonsContainer);
+
+  renderProjectSwitcherButton(
+    "prev",
+    "prev-proj-btn",
+    (e) => {
+      currentProject--;
+      if (currentProject < 0) currentProject = totalProjects;
+      renderProjectsCarousel(container); // @TODO this should render only projects
+    },
+    buttonsContainer
+  );
+  renderProjectSwitcherButton(
+    "next",
+    "next-proj-btn",
+    (e) => {
+      currentProject++;
+      if (currentProject > totalProjects - 1) currentProject = 0;
+      renderProjectsCarousel(container); // @TODO this should render only projects
+    },
+    buttonsContainer
+  );
+};
+
+// @TODO change name parameter to arrow somehow
+const renderProjectSwitcherButton = function (name, className, fun, container) {
+  const newButton = document.createElement("button");
+  newButton.classList.add(className);
+  newButton.classList.add("switch-proj-btn");
+  newButton.innerText = name;
+  newButton.addEventListener("click", fun);
+  container.appendChild(newButton);
 };
 
 const renderProjects = function () {};
