@@ -150,7 +150,7 @@ const renderYearsIndicator = function (skill, container) {
   for (let i = 1; i <= 5; i++) {
     const dot = document.createElement("div");
     dot.classList.add("indicator-dot");
-    if (i <= years) dot.classList.add("indicator-dot-fill");
+    if (i <= years) dot.classList.add("indicator-dot-filled");
     indicatorElement.appendChild(dot);
   }
 

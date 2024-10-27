@@ -20,12 +20,31 @@ header, footer {
 
 /* === MAIN === */
 
+/* --- home --- */
+
 .main-photo {
     /* for testing */
     height: 100px;
     width: 200px;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.indicator {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+}
+
+.indicator-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border: 1px solid var(--valhalla);
+    border-radius: 50%;
+}
+
+.indicator-dot-filled {
+    background-color: var(--valhalla);
 }
 
 /* === FOOTER === */
