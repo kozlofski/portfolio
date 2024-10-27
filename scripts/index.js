@@ -10,7 +10,10 @@ let currentProject = 0;
 const render = function () {
   renderHeader();
   renderMain(currentPage);
+  renderFooter();
 };
+
+// HEADER
 
 const renderHeader = function () {
   renderLogo();
@@ -65,6 +68,8 @@ const renderMain = function (currentPage) {
       break;
   }
 };
+
+// HOME
 
 const renderHome = function () {
   const mainContainer = document.querySelector(".main-container");
@@ -166,17 +171,9 @@ const renderYearsIndicator = function (years, container) {
 };
 
 const renderProjectsCarousel = function (container) {
-  const oldProjectsContainer = document.querySelector(".projects-container");
-  let projectsContainer = null;
-
-  if (oldProjectsContainer !== null) {
-    projectsContainer = oldProjectsContainer;
-    projectsContainer.innerHTML = "";
-  } else {
-    projectsContainer = document.createElement("ul");
-    container.appendChild(projectsContainer);
-    projectsContainer.classList.add("projects-container");
-  }
+  const projectsContainer = document.createElement("ul");
+  container.appendChild(projectsContainer);
+  projectsContainer.classList.add("projects-container");
 
   const projectsList = data.main.projects;
   const projectsListShifted = projectsList
@@ -222,7 +219,7 @@ const renderProjectButtons = function (container) {
     (e) => {
       currentProject--;
       if (currentProject < 0) currentProject = totalProjects;
-      renderProjectsCarousel(container); // @TODO this should render only projects
+      renderHome(); // @TODO this should render only projects
     },
     buttonsContainer
   );
@@ -232,7 +229,7 @@ const renderProjectButtons = function (container) {
     (e) => {
       currentProject++;
       if (currentProject > totalProjects - 1) currentProject = 0;
-      renderProjectsCarousel(container); // @TODO this should render only projects
+      renderHome(); // @TODO this should render only projects
     },
     buttonsContainer
   );
@@ -252,5 +249,17 @@ const renderProjects = function () {};
 const renderAbout = function () {};
 const renderContact = function () {};
 const renderMessages = function () {};
+
+const renderFooter = function () {
+  const footerEmail = document.querySelector(".email");
+  footerEmail.innerText = data.footer.email;
+  const footerPhone = document.querySelector(".phone");
+  footerPhone.innerText = data.footer.tel;
+  const logo = document.querySelector(".footer-logo");
+  logo.innerText = data.footer.logo;
+  const copyright = document.querySelector(".copyright");
+  const copyrightMark = '<i class="fa-regular fa-copyright"></i>';
+  copyright.innerHTML = `${copyrightMark}${data.footer.year}`;
+};
 
 render();
