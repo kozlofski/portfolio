@@ -131,7 +131,12 @@ const renderIcon = function (skill, skillListItem) {
 };
 
 const renderSkillDescription = function (skill, skillListItem) {
+  const skillDescriptionDiv = document.createElement("div");
   const h3Element = document.createElement("h3");
+  h3Element.innerText = skill.tech;
+  skillDescriptionDiv.appendChild(h3Element);
+
+  skillListItem.appendChild(skillDescriptionDiv);
 };
 
 const renderProjects = function () {};
