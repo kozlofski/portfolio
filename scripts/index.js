@@ -137,15 +137,19 @@ const renderSkillDescription = function (skill, skillListItem) {
   h3Element.innerText = skill.tech;
   skillDescriptionDiv.appendChild(h3Element);
 
-  renderYearsIndicator(skill, skillDescriptionDiv);
+  const years = skill.exp;
+  renderYearsIndicator(years, skillDescriptionDiv);
+
+  const yearsCaption = document.createElement("p");
+  yearsCaption.innerText = `${years} years`;
+  skillDescriptionDiv.appendChild(yearsCaption);
 
   skillListItem.appendChild(skillDescriptionDiv);
 };
 
-const renderYearsIndicator = function (skill, container) {
+const renderYearsIndicator = function (years, container) {
   const indicatorElement = document.createElement("div");
   indicatorElement.classList.add("indicator");
-  const years = skill.exp;
 
   for (let i = 1; i <= 5; i++) {
     const dot = document.createElement("div");
