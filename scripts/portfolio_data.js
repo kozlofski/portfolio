@@ -99,15 +99,15 @@ const data = {
     contact: {
       h2: "Contact me",
       name: {
-        h3: "Name",
+        label: "Name",
         placeholder: "Your Name",
       },
       email: {
-        h3: "Email",
+        label: "Email",
         placeholder: "email@example.com",
       },
       message: {
-        h3: "Message",
+        label: "Message",
         placeholder: "Hello, my name is...",
       },
     },
