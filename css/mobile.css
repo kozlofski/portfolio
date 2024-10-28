@@ -1,14 +1,3 @@
-/* .league-gothic-<uniquifier> {
-    font-family: "League Gothic", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
-  } */
-
-
-
 .section {
     width: 100vw;
 }
@@ -19,7 +8,7 @@ header, footer {
 }
 
 .container {
-    width: 100%;
+    /*  */
 }
 
 button,
@@ -34,6 +23,13 @@ button,
 
 .header-container {
     height: 500px;
+    /* margin: 0.625rem 1rem 0 1rem; */
+}
+
+.logo-and-navbar {
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-logo,
