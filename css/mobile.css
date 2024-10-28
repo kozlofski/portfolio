@@ -168,6 +168,15 @@ article p {
     font-weight: 400;
 }
 
+/* --- message --- */
+
+.message-container {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 0.92rem;
+}
+
 /* === FOOTER === */
 
 .footer-container {
