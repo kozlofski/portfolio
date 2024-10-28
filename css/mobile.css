@@ -23,7 +23,8 @@ button,
 
 .header-container {
     height: 500px;
-    margin: 0.625rem 1rem 0 1rem;
+    margin: 0 1rem;
+    padding-top: 10px;
 }
 
 .logo-and-navbar {
@@ -55,10 +56,19 @@ button,
     color: var(--white);
 }
 
+.header-menu {
+    position: absolute;
+    background-color: var(--valhalla);
+    width: 100%;
+    top: 5.625rem;
+    z-index: 1;
+}
+
 .header-menu li {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 1rem;
+    height: 3rem;
 }
 
 .menu-opened {
