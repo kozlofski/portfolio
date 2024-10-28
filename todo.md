@@ -15,6 +15,7 @@
 - add delete buttons to cards on projects view
 - create class radius8 and radius16
 - should mobile menu hide after selecting subpage?
+- contact me h2 ommited
 
 - fonts:
   Roboto 400, 700

@@ -76,6 +76,12 @@ h1 {
 
 /* === MAIN === */
 
+main h2 {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
 /* --- home --- */
 
 .main-photo {
@@ -85,6 +91,7 @@ h1 {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
 
 .indicator {
     display: flex;
