@@ -106,7 +106,7 @@ const data = {
         h3: "Email",
         placeholder: "email@example.com",
       },
-      name: {
+      message: {
         h3: "Message",
         placeholder: "Hello, my name is...",
       },

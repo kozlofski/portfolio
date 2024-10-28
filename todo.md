@@ -7,3 +7,4 @@
 - rename currentProject variable to more descriptive name
 - unify button class names
 - rethink class names for subcontainers
+- separate functions for appending h2, p, etc.
