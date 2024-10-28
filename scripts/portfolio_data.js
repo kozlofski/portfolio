@@ -46,31 +46,43 @@ const data = {
           },
           {
             tech: "CSS",
-            exp: 2,
+            exp: 4,
           },
           {
             tech: "JavaScript",
             exp: 2,
           },
           {
-            tech: "Git",
-            exp: 4,
-          },
-          {
             tech: "Figma",
             exp: 1,
           },
           {
-            tech: "Chrome",
+            tech: "Java",
             exp: 3,
           },
           {
             tech: "VSCode",
-            exp: 1,
+            exp: 3,
+          },
+          {
+            tech: "Git",
+            exp: 4,
           },
           {
             tech: "GitHub",
+            exp: 4,
+          },
+          {
+            tech: "CPP",
             exp: 1,
+          },
+          {
+            tech: "Linux",
+            exp: 5,
+          },
+          {
+            tech: "Bash",
+            exp: 3,
           },
         ],
       },
