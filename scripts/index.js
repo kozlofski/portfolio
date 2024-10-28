@@ -2,7 +2,7 @@ import data from "./portfolio_data.js";
 import errors from "./errors.js";
 import Message from "./utilities.js";
 
-let currentPage = "about";
+let currentPage = "contact";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let currentProject = 0;
@@ -355,7 +355,60 @@ const renderArticle = function (topic, container) {
   container.appendChild(newArticle);
 };
 
-const renderContact = function () {};
+// --- CONTACT ---
+
+const renderContact = function () {
+  const mainContainer = document.querySelector(".main-container");
+  mainContainer.innerHTML = "";
+
+  const contactForm = document.createElement("form");
+  contactForm.name = "contact-form";
+  contactForm.classList.add("contact-form");
+  mainContainer.appendChild(contactForm);
+
+  renderInput("name", contactForm);
+  renderInput("email", contactForm);
+  renderInput("message", contactForm);
+
+  const submitButton = document.createElement("input");
+  submitButton.type = "submit";
+  submitButton.value = "Send message";
+  contactForm.appendChild(submitButton);
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+};
+
+const renderInput = function (type, container) {
+  const newInputData = data.main.contact[type];
+
+  const newInputContainer = document.createElement("div");
+  newInputContainer.classList.add(`${type}-input-container`);
+  newInputContainer.classList.add("input-container");
+  container.appendChild(newInputContainer);
+
+  const labelForNewInput = document.createElement("label");
+  labelForNewInput.innerText = newInputData.label;
+  labelForNewInput.for = type;
+  labelForNewInput.classList.add("contact-input-label");
+  newInputContainer.appendChild(labelForNewInput);
+
+  const newInputElement = document.createElement("input");
+  newInputElement.name = type;
+  newInputElement.type = "text";
+  newInputElement.placeholder = newInputData.placeholder;
+  newInputElement.classList.add("contact-input");
+  newInputContainer.appendChild(newInputElement);
+
+  const divForValidationErrors = document.createElement("p");
+  divForValidationErrors.classList.add(`${type}-validation-error`);
+  divForValidationErrors.classList.add("validation-error");
+  newInputContainer.appendChild(divForValidationErrors);
+
+  container.appendChild(newInputContainer);
+};
+
 const renderMessages = function () {};
 
 // === FOOTER ===
