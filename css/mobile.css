@@ -1,5 +1,5 @@
 .section {
-    width: 100vw;
+    /* width: 100%; */
 }
 
 header, footer {
@@ -23,11 +23,10 @@ button,
 
 .header-container {
     height: 500px;
-    /* margin: 0.625rem 1rem 0 1rem; */
+    margin: 0.625rem 1rem 0 1rem;
 }
 
 .logo-and-navbar {
-    /* width: 100%; */
     display: flex;
     justify-content: space-between;
 }
@@ -74,13 +73,20 @@ h1 {
     font-family: "League Gothic", sans-serif;
     font-weight: 400;
     font-size: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    margin: 3.5rem auto 0 auto;
+    max-width: 360px;
 }
 
 .h1-description {
     font-family: "League Spartan", sans-serif;
     font-weight: 400;
     font-size: 2rem;
+    line-height: 1.84rem;
+    text-align: center;
     letter-spacing: 0.8rem;
+    margin-top: 2rem;
 }
 
 /* === MAIN === */
