@@ -137,7 +137,22 @@ article p {
     width: 300px;
     height: 160px;
     background-image: url(./../img/project-bg.jpeg);
+    font-family: "Roboto", sans-serif;
+
     color: var(--white);
+}
+
+.project-card h3 {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.project-card ul {
+    list-style: inside;
+}
+
+.project-card li {
+    font-weight: 400;
 }
 
 /* === FOOTER === */
