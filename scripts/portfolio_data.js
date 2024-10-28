@@ -3,7 +3,10 @@ import Message from "./utilities.js";
 const data = {
   links: ["home", "projects", "about", "contact", "messages"],
   header: {
-    logo: "ITPortfolio",
+    logo: {
+      common: "ITP",
+      desktop: "ortfolio",
+    },
     description: {
       home: {
         h1: "Jan Kowalski",

@@ -11,3 +11,7 @@
 - add descriptive classes to main containers dynamically on page change
 - delete unnecessary arrow functions from forEach'es (simple callback without args), like in renderMessage()
 - change render() to initialRender() or sth
+- all hiding/unhiding should be done in CSS via classes
+- add delete buttons to cards on projects view
+- create class radius8 and radius16
+- should mobile menu hide after selecting subpage?

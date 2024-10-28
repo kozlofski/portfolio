@@ -29,9 +29,21 @@ const renderHeader = function () {
   renderHeaderDescription(currentPage);
 };
 
-const renderLogo = function (container) {
-  const logo = document.querySelector(container);
-  logo.innerText = data.header.logo;
+const renderLogo = function (logoContainer) {
+  const logo = document.querySelector(logoContainer);
+  const commonPart = document.createElement("span");
+  commonPart.classList.add("logo-common");
+  commonPart.innerText = data.header.logo.common;
+
+  const desktopPart = document.createElement("span");
+  desktopPart.classList.add("logo-desktop");
+  if (logoContainer === ".header-logo") {
+    desktopPart.classList.add("logo-desktop-header");
+  }
+
+  desktopPart.innerText = data.header.logo.desktop;
+
+  logo.append(commonPart, desktopPart);
 };
 
 const burger = function () {

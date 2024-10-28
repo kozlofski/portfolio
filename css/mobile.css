@@ -17,6 +17,14 @@ header, footer {
     height: 200px;
 }
 
+.logo-common {
+    color: var(--gold);
+}
+
+.logo-desktop-header {
+    display: none;
+}
+
 .fa-bars {
     color: var(--white);
 }
