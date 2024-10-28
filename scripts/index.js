@@ -2,7 +2,7 @@ import data from "./portfolio_data.js";
 import errors from "./errors.js";
 import Message from "./utilities.js";
 
-let currentPage = "messages";
+let currentPage = "home";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let currentProject = 0;
@@ -213,7 +213,7 @@ const renderYearsIndicator = function (years, container) {
 
 const renderProjectsCarousel = function (container) {
   let projectsContainer = null;
-  const oldProjectsContainer = document.querySelector(".projects-container");
+  const oldProjectsContainer = document.querySelector(".projects-carousel");
 
   if (oldProjectsContainer === null) {
     projectsContainer = document.createElement("ul");
