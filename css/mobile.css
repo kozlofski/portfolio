@@ -104,7 +104,16 @@ article p {
     background-repeat: no-repeat;
 }
 
+.skill-description {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.171875rem;
+}
 
+.skill-description p {
+    color: var(--grey);
+}
 
 
 .indicator {
