@@ -344,7 +344,7 @@ const renderAbout = function () {
   renderArticle("hobbies", mainContainer);
 
   const contactMeButton = document.createElement("button");
-  contactMeButton.classList.add("contactme-button");
+  contactMeButton.classList.add("contact-me-button");
   contactMeButton.innerText = "Contact me";
   contactMeButton.addEventListener("click", (e) => {
     currentPage = "contact";
@@ -386,6 +386,7 @@ const renderContact = function () {
   const submitButton = document.createElement("input");
   submitButton.type = "submit";
   submitButton.value = "Send message";
+  submitButton.classList.add("send-message-button");
   contactForm.appendChild(submitButton);
 
   contactForm.addEventListener("submit", (e) => {
