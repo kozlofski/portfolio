@@ -65,7 +65,6 @@ const toggleMobileMenu = function () {
     menuDiv.style.display = "block";
     burger.classList.add("menu-opened");
   }
-  console.log(mobileMenuOpened);
 };
 
 const renderMenu = function () {
