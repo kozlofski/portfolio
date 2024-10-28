@@ -81,11 +81,13 @@ const renderMenu = function () {
     menuList.appendChild(item);
     item.addEventListener("click", function (e) {
       currentPage = link;
-      console.log("switching to", currentPage);
       toggleMobileMenu();
       renderOnPageChange();
       // render();
     });
+    if (link === currentPage) {
+      item.classList.add("selected-link");
+    }
   }
 };
 

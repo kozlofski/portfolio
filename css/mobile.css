@@ -33,6 +33,10 @@ header, footer {
     color: var(--gold);
 }
 
+.selected-link {
+    color: var(--grey);
+}
+
 /* === MAIN === */
 
 /* --- home --- */
