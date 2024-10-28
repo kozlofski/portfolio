@@ -76,7 +76,7 @@ const renderMenu = function () {
   const links = data.links;
   for (const link of links) {
     const item = document.createElement("li");
-    item.innerText = link;
+    item.innerText = link.toUpperCase();
     menuList.appendChild(item);
     item.addEventListener("click", function (e) {
       currentPage = link;
@@ -94,8 +94,8 @@ const renderHeaderDescription = function (currentPage) {
   const h1Element = document.querySelector("h1");
   const pElement = document.querySelector(".h1-description");
 
-  const h1Content = data.header.description[currentPage].h1;
-  const pContent = data.header.description[currentPage].p;
+  const h1Content = data.header.description[currentPage].h1.toUpperCase();
+  const pContent = data.header.description[currentPage].p.toUpperCase();
 
   h1Element.innerText = h1Content;
   pElement.innerText = pContent;
