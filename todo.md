@@ -15,3 +15,8 @@
 - add delete buttons to cards on projects view
 - create class radius8 and radius16
 - should mobile menu hide after selecting subpage?
+
+- fonts:
+  Roboto 400, 700
+  League gothic 400
+  League spartan 400, 700
