@@ -76,10 +76,22 @@ h1 {
 
 /* === MAIN === */
 
+main {
+    color: var(--valhalla);
+}
+
 main h2 {
     font-family: "League Spartan", sans-serif;
     font-weight: 700;
     font-size: 2rem;
+}
+
+.about-me p,
+article p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.171875rem;
 }
 
 /* --- home --- */
@@ -91,6 +103,8 @@ main h2 {
     background-size: contain;
     background-repeat: no-repeat;
 }
+
+
 
 
 .indicator {
