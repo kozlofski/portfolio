@@ -8,3 +8,6 @@
 - unify button class names
 - rethink class names for subcontainers
 - separate functions for appending h2, p, etc.
+- add descriptive classes to main containers dynamically on page change
+- delete unnecessary arrow functions from forEach'es (simple callback without args), like in renderMessage()
+- change render() to initialRender() or sth

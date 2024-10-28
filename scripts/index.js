@@ -2,7 +2,7 @@ import data from "./portfolio_data.js";
 import errors from "./errors.js";
 import Message from "./utilities.js";
 
-let currentPage = "contact";
+let currentPage = "messages";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let currentProject = 0;
@@ -409,7 +409,29 @@ const renderInput = function (type, container) {
   container.appendChild(newInputContainer);
 };
 
-const renderMessages = function () {};
+// --- MESSAGES ---
+
+const renderMessages = function () {
+  const mainContainer = document.querySelector(".main-container");
+  mainContainer.innerHTML = "";
+
+  const messagesData = data.main.messages;
+  messagesData.forEach((message) => renderMessage(message, mainContainer));
+};
+
+const renderMessage = function (message, container) {
+  const newMessage = document.createElement("div");
+  newMessage.classList.add("message-container");
+  const senderName = message.name;
+  const senderEmail = message.email;
+  const messageContent = message.message;
+
+  newMessage.innerText = `Name: ${senderName}
+  Email: ${senderEmail}
+  Message: ${messageContent}`;
+
+  container.appendChild(newMessage);
+};
 
 // === FOOTER ===
 
