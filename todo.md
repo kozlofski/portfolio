@@ -16,6 +16,9 @@
 - create class radius8 and radius16
 - should mobile menu hide after selecting subpage?
 - contact me h2 ommited
+- interline on mobile menu to fix
+- mobile menu should not hide after clicking
+- add shadows
 
 - fonts:
   Roboto 400, 700
