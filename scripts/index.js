@@ -104,21 +104,24 @@ const renderHeaderDescription = function (currentPage) {
 // === MAIN ===
 
 const renderMain = function (currentPage) {
+  const mainContainer = document.querySelector(".main-container");
+  mainContainer.innerHTML = "";
+
   switch (currentPage) {
     case "home":
-      renderHome();
+      renderHome(mainContainer);
       break;
     case "projects":
-      renderProjects();
+      renderProjects(mainContainer);
       break;
     case "about":
-      renderAbout();
+      renderAbout(mainContainer);
       break;
     case "contact":
-      renderContact();
+      renderContact(mainContainer);
       break;
     case "messages":
-      renderMessages();
+      renderMessages(mainContainer);
       break;
   }
 };
@@ -132,15 +135,22 @@ const updateSubpageClasses = function (container) {
 
 // --- HOME ---
 
-const renderHome = function () {
-  const mainContainer = document.querySelector(".main-container");
-  mainContainer.innerHTML = "";
+const renderHome = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
   renderMainPhoto(mainContainer);
   renderAboutMe(mainContainer);
   renderSkills(mainContainer);
   renderProjectsCarousel(mainContainer);
+};
+
+// @TODO move this fn up to common functions
+const appendElement = function (htmlEl, container, innerText, elClass) {
+  const newElement = document.createElement(htmlEl);
+  newElement.innerText = innerText;
+  if (elClass) newElement.classList.add(elClass);
+  container.appendChild(newElement);
+  return newElement;
 };
 
 const renderMainPhoto = function (container) {
@@ -322,10 +332,7 @@ const renderProjectSwitcherButton = function (
 
 // --- PROJECTS ---
 
-const renderProjects = function () {
-  const mainContainer = document.querySelector(".main-container");
-  mainContainer.innerHTML = "";
-
+const renderProjects = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
   const addProjectButton = document.createElement("button");
@@ -346,9 +353,7 @@ const renderProjects = function () {
 
 // --- ABOUT ---
 
-const renderAbout = function () {
-  const mainContainer = document.querySelector(".main-container");
-  mainContainer.innerHTML = "";
+const renderAbout = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
   renderMainPhoto(mainContainer);
@@ -383,10 +388,7 @@ const renderArticle = function (topic, container) {
 
 // --- CONTACT ---
 
-const renderContact = function () {
-  const mainContainer = document.querySelector(".main-container");
-  mainContainer.innerHTML = "";
-
+const renderContact = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
   const contactForm = document.createElement("form");
@@ -440,10 +442,7 @@ const renderInput = function (type, container) {
 
 // --- MESSAGES ---
 
-const renderMessages = function () {
-  const mainContainer = document.querySelector(".main-container");
-  mainContainer.innerHTML = "";
-
+const renderMessages = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
   const messagesData = data.main.messages;
