@@ -206,12 +206,15 @@ article p {
 }
 
 .project-card {
-    width: 300px;
-    height: 160px;
+    width: 18.75rem;
+    height: 28.75rem;
     background-image: url(./../img/project-bg.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: "Roboto", sans-serif;
-
     color: var(--white);
+    border-radius: 1rem;
 }
 
 .project-card h3 {
