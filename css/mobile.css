@@ -136,10 +136,24 @@ article p {
 
 .main-photo {
     /* for testing */
-    height: 100px;
-    width: 200px;
-    background-size: contain;
+    width: 100%;
+    padding-top: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 1rem;
+}
+
+.about-me {
+    margin-top: 4.0625rem;
+}
+
+.about-me p {
+    margin-top: 1.0625rem
+}
+
+.skills {
+    margin-top: 2.5rem;
 }
 
 .skill-description {

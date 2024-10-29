@@ -163,7 +163,7 @@ const renderMainPhoto = function (container) {
 };
 
 const renderAboutMe = function (container) {
-  const aboutMeDiv = appendElement("div", container);
+  const aboutMeDiv = appendElement("div", container, "", "about-me");
   appendElement("h2", aboutMeDiv, data.main.home.aboutMe.h2);
   appendElement("p", aboutMeDiv, data.main.home.aboutMe.p);
 };
