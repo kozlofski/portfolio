@@ -7,10 +7,6 @@ header, footer {
     color: var(--white);
 }
 
-.container {
-    /*  */
-}
-
 button,
 .send-message-button {
     font-family: "Roboto", sans-serif;
@@ -133,6 +129,10 @@ article p {
 }
 
 /* --- home --- */
+
+.container-home {
+    padding: 5.25rem 1rem;
+}
 
 .main-photo {
     /* for testing */

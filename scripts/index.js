@@ -1,7 +1,7 @@
 import data from "./portfolio_data.js";
 import errors from "./errors.js";
-import Message from "./utilities.js";
 import fa from "./font_awesome.js";
+import Message from "./utilities.js";
 
 let currentPage = "home";
 let mobileMenuOpened = false;
