@@ -262,7 +262,7 @@ const renderProjectButtons = function (container) {
   );
 
   renderProjectSwitcherButton(
-    fa.faLeftArrow,
+    fa.leftArrow,
     "prev-proj-btn",
     (e) => {
       switchProject("previous", container.parentNode);
@@ -270,7 +270,7 @@ const renderProjectButtons = function (container) {
     buttonsContainer
   );
   renderProjectSwitcherButton(
-    fa.faRightArrow,
+    fa.rightArrow,
     "next-proj-btn",
     (e) => {
       switchProject("next", container.parentNode);
@@ -453,7 +453,7 @@ const renderFooter = function () {
   footerPhone.innerText = data.footer.tel;
   renderLogo(".footer-logo");
   const copyright = document.querySelector(".copyright");
-  const copyrightMark = '<i class="fa-regular fa-copyright"></i>';
+  const copyrightMark = fa.copyright;
   copyright.innerHTML = `${copyrightMark}${data.footer.year}`;
 };
 
