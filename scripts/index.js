@@ -244,8 +244,9 @@ const renderProjectsCarousel = function (container) {
 
 const renderProjectCard = function (project, container) {
   const projectCard = appendElement("li", container, "", "project-card");
+  appendElement("div", projectCard, "", "card-blur");
   appendElement("h3", projectCard, project.name);
-  const techList = appendElement("ul", projectCard);
+  const techList = appendElement("ul", projectCard, "", "tech-list");
   const techs = project.techs;
 
   techs.forEach((tech) => {
