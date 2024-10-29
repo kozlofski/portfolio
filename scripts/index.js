@@ -1,6 +1,7 @@
 import data from "./portfolio_data.js";
 import errors from "./errors.js";
 import Message from "./utilities.js";
+import fa from "./font_awesome.js";
 
 let currentPage = "home";
 let mobileMenuOpened = false;
@@ -269,51 +270,52 @@ const renderProjectsCarousel = function (container) {
 };
 
 const renderProjectCard = function (project, container) {
-  const projectCard = document.createElement("li");
-  projectCard.classList.add("project-card");
-
-  const projectH3 = document.createElement("h3");
-  projectH3.innerText = project.name;
-  projectCard.appendChild(projectH3);
-
-  const techList = document.createElement("ul");
-  projectCard.appendChild(techList);
-
+  const projectCard = appendElement("li", container, "", "project-card");
+  appendElement("h3", projectCard, project.name);
+  const techList = appendElement("ul", projectCard);
   const techs = project.techs;
-  techs.forEach((tech) => {
-    const item = document.createElement("li");
-    item.innerText = tech;
-    techList.appendChild(item);
-  });
 
-  container.appendChild(projectCard);
+  techs.forEach((tech) => {
+    appendElement("li", techList, tech);
+  });
 };
 
 const renderProjectButtons = function (container) {
-  const buttonsContainer = document.createElement("div");
-  buttonsContainer.classList.add("project-btns-container");
-  container.appendChild(buttonsContainer);
+  const buttonsContainer = appendElement(
+    "div",
+    container,
+    "",
+    "project-btns-container"
+  );
 
   renderProjectSwitcherButton(
-    '<i class="fa-solid fa-arrow-left"></i>',
+    fa.faLeftArrow,
     "prev-proj-btn",
     (e) => {
-      currentProject--;
-      if (currentProject < 0) currentProject = totalProjects;
-      renderProjectsCarousel(container.parentNode); // @TODO this should render only projects
+      switchProject("previous", container.parentNode);
     },
     buttonsContainer
   );
   renderProjectSwitcherButton(
-    '<i class="fa-solid fa-arrow-right"></i>',
+    fa.faRightArrow,
     "next-proj-btn",
     (e) => {
-      currentProject++;
-      if (currentProject > totalProjects - 1) currentProject = 0;
-      renderProjectsCarousel(container.parentNode); // @TODO this should render only projects
+      switchProject("next", container.parentNode);
     },
     buttonsContainer
   );
+};
+
+const switchProject = function (direction, container) {
+  if (direction === "next") {
+    currentProject++;
+    if (currentProject > totalProjects - 1) currentProject = 0;
+    renderProjectsCarousel(container.parentNode);
+  } else {
+    currentProject--;
+    if (currentProject < 0) currentProject = totalProjects;
+    renderProjectsCarousel(container.parentNode);
+  }
 };
 
 const renderProjectSwitcherButton = function (
