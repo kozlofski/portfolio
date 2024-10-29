@@ -154,6 +154,23 @@ article p {
 
 .skills {
     margin-top: 2.5rem;
+
+}
+
+.skill-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.40625rem;
+    margin-top: 2rem;
+    margin-bottom: 5.25rem;
+
+}
+
+.skill-list li {
+    display: flex;
+    gap: 0.625rem;
+    height: 4rem;
 }
 
 .skill-description {
@@ -161,6 +178,9 @@ article p {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.171875rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .skill-description p {
