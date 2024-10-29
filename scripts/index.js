@@ -148,7 +148,7 @@ const renderHome = function (mainContainer) {
 // @TODO move this fn up to common functions
 const appendElement = function (htmlEl, container, innerText, elClass) {
   const newElement = document.createElement(htmlEl);
-  newElement.innerText = innerText;
+  if (innerText) newElement.innerText = innerText;
   if (elClass) newElement.classList.add(elClass);
   container.appendChild(newElement);
   return newElement;
@@ -163,76 +163,53 @@ const renderMainPhoto = function (container) {
 };
 
 const renderAboutMe = function (container) {
-  const aboutMeDiv = document.createElement("div");
-  aboutMeDiv.classList.add("about-me");
-  container.appendChild(aboutMeDiv);
-
-  const h2Element = document.createElement("h2");
-  h2Element.innerText = data.main.home.aboutMe.h2;
-  aboutMeDiv.appendChild(h2Element);
-
-  const pElement = document.createElement("p");
-  pElement.innerText = data.main.home.aboutMe.p;
-  aboutMeDiv.appendChild(pElement);
+  const aboutMeDiv = appendElement("div", container);
+  appendElement("h2", aboutMeDiv, data.main.home.aboutMe.h2);
+  appendElement("p", aboutMeDiv, data.main.home.aboutMe.p);
 };
 
 const renderSkills = function (container) {
-  const skillsDiv = document.createElement("div");
-  skillsDiv.classList.add("skills");
-  container.appendChild(skillsDiv);
-
-  const h2Element = document.createElement("h2");
-  h2Element.innerText = data.main.home.skills.h2;
-  skillsDiv.appendChild(h2Element);
-
+  const skillsDiv = appendElement("div", container, "", "skills");
+  appendElement("h2", skillsDiv, data.main.home.skills.h2);
   renderSKillList(skillsDiv);
 };
 
 const renderSKillList = function (skillsDiv) {
-  const skillList = document.createElement("ul");
-  skillList.classList.add("skill-list");
-  skillsDiv.appendChild(skillList);
-
+  const skillList = appendElement("ul", skillsDiv, "", "skill-list");
   const skillsData = data.main.home.skills.skillList;
-
   skillsData.forEach((skill) => renderSkill(skill, skillList));
 };
 
 const renderSkill = function (skill, skillList) {
-  const skillListItem = document.createElement("li");
+  const skillListItem = appendElement("li", skillList);
   renderIcon(skill, skillListItem);
   renderSkillDescription(skill, skillListItem);
-
-  skillList.appendChild(skillListItem);
 };
 
 const renderIcon = function (skill, skillListItem) {
-  const icon = document.createElement("img");
+  const icon = appendElement("img", skillListItem);
   const iconUrl = `./svg/${skill.tech.toLowerCase()}.svg`;
   icon.src = iconUrl;
-  skillListItem.appendChild(icon);
 };
 
 const renderSkillDescription = function (skill, skillListItem) {
-  const skillDescriptionDiv = document.createElement("div");
-  skillDescriptionDiv.classList.add("skill-description");
-  const h3Element = document.createElement("h3");
-  h3Element.innerText = skill.tech;
-  skillDescriptionDiv.appendChild(h3Element);
+  const skillDescriptionDiv = appendElement(
+    "div",
+    skillListItem,
+    "",
+    "skill-description"
+  );
+
+  appendElement("h3", skillDescriptionDiv, skill.tech);
 
   const years = skill.exp;
   renderYearsIndicator(years, skillDescriptionDiv);
 
-  const yearsCaption = document.createElement("p");
-  yearsCaption.innerText = `${years} years`;
-  skillDescriptionDiv.appendChild(yearsCaption);
-
-  skillListItem.appendChild(skillDescriptionDiv);
+  appendElement("p", skillDescriptionDiv, `${years} years`);
 };
 
 const renderYearsIndicator = function (years, container) {
-  const indicatorElement = document.createElement("div");
-  indicatorElement.classList.add("indicator");
+  const indicatorElement = appendElement("div", container, "", "indicator");
 
   for (let i = 1; i <= 5; i++) {
     const dot = document.createElement("div");
@@ -240,8 +217,6 @@ const renderYearsIndicator = function (years, container) {
     if (i <= years) dot.classList.add("indicator-dot-filled");
     indicatorElement.appendChild(dot);
   }
-
-  container.appendChild(indicatorElement);
 };
 
 const renderProjectsCarousel = function (container) {
@@ -249,9 +224,7 @@ const renderProjectsCarousel = function (container) {
   const oldProjectsContainer = document.querySelector(".projects-carousel");
 
   if (oldProjectsContainer === null) {
-    projectsContainer = document.createElement("ul");
-    container.appendChild(projectsContainer);
-    projectsContainer.classList.add("projects-carousel");
+    projectsContainer = appendElement("ul", container, "", "projects-carousel");
   } else {
     projectsContainer = oldProjectsContainer;
     projectsContainer.innerHTML = "";
@@ -324,12 +297,10 @@ const renderProjectSwitcherButton = function (
   fun,
   container
 ) {
-  const newButton = document.createElement("button");
-  newButton.classList.add(className);
-  newButton.classList.add("switch-proj-btn");
+  const newButton = appendElement("button", container, "", className);
   newButton.innerHTML = content;
+  newButton.classList.add("switch-proj-btn");
   newButton.addEventListener("click", fun);
-  container.appendChild(newButton);
 };
 
 // --- PROJECTS ---
@@ -337,15 +308,20 @@ const renderProjectSwitcherButton = function (
 const renderProjects = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
-  const addProjectButton = document.createElement("button");
-  addProjectButton.innerText = "+ Add project";
-  // @TODO '+' sign should be separate <span> probably
-  addProjectButton.classList.add("add-project-btn");
-  mainContainer.appendChild(addProjectButton);
+  const addProjectButton = appendElement(
+    "button",
+    mainContainer,
+    "",
+    "add-project-btn"
+  );
+  addProjectButton.innerHTML = `${fa.plus} Add project`;
 
-  const projectsContainer = document.createElement("div");
-  projectsContainer.classList.add("projects-container");
-  mainContainer.appendChild(projectsContainer);
+  const projectsContainer = appendElement(
+    "div",
+    mainContainer,
+    "",
+    "projects-container"
+  );
 
   const projectsList = data.main.projects;
   projectsList.forEach((project) =>
@@ -363,29 +339,28 @@ const renderAbout = function (mainContainer) {
   renderArticle("background", mainContainer);
   renderArticle("hobbies", mainContainer);
 
-  const contactMeButton = document.createElement("button");
-  contactMeButton.classList.add("contact-me-button");
-  contactMeButton.innerText = "Contact me";
+  const contactMeButton = appendElement(
+    "button",
+    mainContainer,
+    "Contact me",
+    "contact-me-button"
+  );
   contactMeButton.addEventListener("click", (e) => {
     currentPage = "contact";
     renderOnPageChange();
   });
-  mainContainer.appendChild(contactMeButton);
 };
 
 const renderArticle = function (topic, container) {
-  const newArticle = document.createElement("article");
-  newArticle.classList.add(`my-${topic}-article`);
+  const newArticle = appendElement(
+    "article",
+    container,
+    "",
+    `my-${topic}-article`
+  );
 
-  const h2 = document.createElement("h2");
-  newArticle.appendChild(h2);
-  h2.innerText = data.main.aboutMe[topic].h2;
-
-  const p = document.createElement("p");
-  newArticle.appendChild(p);
-  p.innerText = data.main.aboutMe[topic].p;
-
-  container.appendChild(newArticle);
+  appendElement("h2", newArticle, data.main.aboutMe[topic].h2);
+  appendElement("p", newArticle, data.main.aboutMe[topic].p);
 };
 
 // --- CONTACT ---
@@ -393,10 +368,8 @@ const renderArticle = function (topic, container) {
 const renderContact = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
-  const contactForm = document.createElement("form");
+  const contactForm = appendElement("form", mainContainer, "", "contact-form");
   contactForm.name = "contact-form";
-  contactForm.classList.add("contact-form");
-  mainContainer.appendChild(contactForm);
 
   renderInput("name", contactForm);
   renderInput("email", contactForm);
@@ -416,30 +389,39 @@ const renderContact = function (mainContainer) {
 const renderInput = function (type, container) {
   const newInputData = data.main.contact[type];
 
-  const newInputContainer = document.createElement("div");
+  const newInputContainer = appendElement(
+    "div",
+    container,
+    "",
+    "input-container"
+  );
   newInputContainer.classList.add(`${type}-input-container`);
-  newInputContainer.classList.add("input-container");
-  container.appendChild(newInputContainer);
 
-  const labelForNewInput = document.createElement("label");
-  labelForNewInput.innerText = newInputData.label;
+  const labelForNewInput = appendElement(
+    "label",
+    newInputContainer,
+    newInputData.label,
+    "contact-input-label"
+  );
   labelForNewInput.for = type;
-  labelForNewInput.classList.add("contact-input-label");
-  newInputContainer.appendChild(labelForNewInput);
 
-  const newInputElement = document.createElement("input");
-  newInputElement.name = type;
+  const newInputElement = appendElement(
+    "input",
+    newInputContainer,
+    "",
+    "contact-input"
+  );
   newInputElement.type = "text";
+  newInputElement.name = type;
   newInputElement.placeholder = newInputData.placeholder;
-  newInputElement.classList.add("contact-input");
-  newInputContainer.appendChild(newInputElement);
 
-  const divForValidationErrors = document.createElement("p");
+  const divForValidationErrors = appendElement(
+    "p",
+    newInputContainer,
+    "",
+    "validation-error"
+  );
   divForValidationErrors.classList.add(`${type}-validation-error`);
-  divForValidationErrors.classList.add("validation-error");
-  newInputContainer.appendChild(divForValidationErrors);
-
-  container.appendChild(newInputContainer);
 };
 
 // --- MESSAGES ---
@@ -452,17 +434,11 @@ const renderMessages = function (mainContainer) {
 };
 
 const renderMessage = function (message, container) {
-  const newMessage = document.createElement("div");
-  newMessage.classList.add("message-container");
-  const senderName = message.name;
-  const senderEmail = message.email;
-  const messageContent = message.message;
+  const messageContent = `Name: ${message.name}
+  Email: ${message.email}
+  Message: ${message.message}`;
 
-  newMessage.innerText = `Name: ${senderName}
-  Email: ${senderEmail}
-  Message: ${messageContent}`;
-
-  container.appendChild(newMessage);
+  appendElement("div", container, messageContent, "message-container");
 };
 
 // === FOOTER ===
