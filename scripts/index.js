@@ -123,11 +123,20 @@ const renderMain = function (currentPage) {
   }
 };
 
+const updateSubpageClasses = function (container) {
+  const containerClasses = data.links.map((page) => `container-${page}`);
+  container.classList.remove(...containerClasses);
+  console.log(currentPage);
+  container.classList.add(`container-${currentPage}`);
+};
+
 // --- HOME ---
 
 const renderHome = function () {
   const mainContainer = document.querySelector(".main-container");
   mainContainer.innerHTML = "";
+  updateSubpageClasses(mainContainer);
+
   renderMainPhoto(mainContainer);
   renderAboutMe(mainContainer);
   renderSkills(mainContainer);
@@ -317,6 +326,8 @@ const renderProjects = function () {
   const mainContainer = document.querySelector(".main-container");
   mainContainer.innerHTML = "";
 
+  updateSubpageClasses(mainContainer);
+
   const addProjectButton = document.createElement("button");
   addProjectButton.innerText = "+ Add project";
   // @TODO '+' sign should be separate <span> probably
@@ -338,6 +349,8 @@ const renderProjects = function () {
 const renderAbout = function () {
   const mainContainer = document.querySelector(".main-container");
   mainContainer.innerHTML = "";
+  updateSubpageClasses(mainContainer);
+
   renderMainPhoto(mainContainer);
 
   renderArticle("background", mainContainer);
@@ -373,6 +386,8 @@ const renderArticle = function (topic, container) {
 const renderContact = function () {
   const mainContainer = document.querySelector(".main-container");
   mainContainer.innerHTML = "";
+
+  updateSubpageClasses(mainContainer);
 
   const contactForm = document.createElement("form");
   contactForm.name = "contact-form";
@@ -428,6 +443,8 @@ const renderInput = function (type, container) {
 const renderMessages = function () {
   const mainContainer = document.querySelector(".main-container");
   mainContainer.innerHTML = "";
+
+  updateSubpageClasses(mainContainer);
 
   const messagesData = data.main.messages;
   messagesData.forEach((message) => renderMessage(message, mainContainer));

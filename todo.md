@@ -19,6 +19,7 @@
 - interline on mobile menu to fix
 - mobile menu should not hide after clicking
 - add shadows
+- clearing main container should be in separate function
 
 - fonts:
   Roboto 400, 700
