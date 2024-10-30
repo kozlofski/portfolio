@@ -93,15 +93,15 @@ const data = {
         techs: ["HTML"],
       },
       {
-        name: "Non-governmental organisation",
+        name: "Non-governmental organization",
         techs: ["HTML", "CSS"],
       },
       {
-        name: "Calculator program",
-        techs: ["HTML", "CSS", "JavaScript"],
+        name: "Dendrofonia",
+        techs: ["Java (Processing)", "Pure-Data"],
       },
       {
-        name: "Tetris",
+        name: "Calculator program",
         techs: ["HTML", "CSS", "JavaScript"],
       },
     ],
