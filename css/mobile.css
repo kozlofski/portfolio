@@ -205,6 +205,13 @@ article p {
     background-color: var(--valhalla);
 }
 
+.projects-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5625rem;
+}
+
 .project-card {
     width: 18.75rem;
     height: 28.75rem;
@@ -216,7 +223,7 @@ article p {
     color: var(--white);
     border-radius: 1rem;
     position: relative;
-    /* filter: drop-shadow(0, 4px, 4px, #00000040); */
+    filter: drop-shadow(0, 4px, 4px, #00000040);
 }
 
 .card-blur {
