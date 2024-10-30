@@ -8,6 +8,11 @@ body {
     vertical-align: baseline;
 }
 
+* {
+    box-sizing: border-box;
+
+}
+
 h1, h2, h3, article, p, ul {
     margin: 0;
     padding: 0;

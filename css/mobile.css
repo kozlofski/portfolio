@@ -224,13 +224,14 @@ article p {
     border-radius: 1rem;
     position: relative;
     filter: drop-shadow(0, 4px, 4px, #00000040);
+    padding: 1.125rem 1.5625rem;
 }
 
 .card-blur {
     width: 18.75rem;
     height: 28.75rem;
     background: linear-gradient(180deg, #000000ff, #00000000);
-    filter: drop-shadow(0, 4px, 4px, #00000040);
+    filter: drop-shadow(0, 4px, 4px, 00000040);
     position: absolute;
     top: 0;
     left: 0;
@@ -249,6 +250,11 @@ article p {
     list-style: inside;
     position: relative;
     z-index: 2;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-left: 0.5rem;
 }
 
 .project-card li {
