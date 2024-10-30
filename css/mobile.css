@@ -292,8 +292,16 @@ article p {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 1rem;
+    padding: 3.75rem 0;
 }
 
+.contact-and-copyright {
+    margin: 0 auto;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.875rem;
+}
 
 .copyright {
     font-size: 1.6875rem;
