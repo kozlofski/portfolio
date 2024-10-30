@@ -234,13 +234,12 @@ const renderProjectsCarousel = function (container) {
   const projectsList = data.main.projects;
   const projectsListShifted = projectsList
     .slice(currentProject)
-    .concat(projectsList.slice(0, currentProject));
+    .concat(projectsList.slice(0, currentProject))
+    .slice(0, 3);
 
   projectsListShifted.forEach((project) =>
     renderProjectCard(project, projectsContainer)
   );
-
-  // renderProjectButtons(projectsContainer);
 };
 
 const renderProjectCard = function (project, container) {

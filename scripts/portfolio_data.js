@@ -100,6 +100,10 @@ const data = {
         name: "Calculator program",
         techs: ["HTML", "CSS", "JavaScript"],
       },
+      {
+        name: "Tetris",
+        techs: ["HTML", "CSS", "JavaScript"],
+      },
     ],
     aboutMe: {
       background: {

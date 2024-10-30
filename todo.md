@@ -20,6 +20,8 @@
 - mobile menu should not hide after clicking
 - add shadows
 - clearing main container should be in separate function
+- revise reset.css
+- renderProjectsCarousel - is chosing 3 projects done in the simpliest way?
 
 - fonts:
   Roboto 400, 700
