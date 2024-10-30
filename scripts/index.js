@@ -143,6 +143,7 @@ const renderHome = function (mainContainer) {
   renderAboutMe(mainContainer);
   renderSkills(mainContainer);
   renderProjectsCarousel(mainContainer);
+  renderProjectButtons(mainContainer);
 };
 
 // @TODO move this fn up to common functions
@@ -239,7 +240,7 @@ const renderProjectsCarousel = function (container) {
     renderProjectCard(project, projectsContainer)
   );
 
-  renderProjectButtons(projectsContainer);
+  // renderProjectButtons(projectsContainer);
 };
 
 const renderProjectCard = function (project, container) {
