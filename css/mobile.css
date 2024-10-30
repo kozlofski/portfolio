@@ -13,6 +13,9 @@ button,
     font-weight: 400;
     font-size: 1rem;
     background-color: var(--grey);
+    border-style: none;
+    height: 3.75rem;
+    border-radius: 0.5rem;
 }
 
 /* === HEADER === */
@@ -264,8 +267,14 @@ article p {
 .project-btns-container {
     margin-top: 5.25rem;
     display: flex;
+    justify-content: center;
     gap: 3.4375rem;
 }
+
+.switch-proj-btn {
+    width: 3.75rem;
+}
+
 
 /* --- message --- */
 
