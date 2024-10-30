@@ -261,6 +261,12 @@ article p {
     font-weight: 400;
 }
 
+.project-btns-container {
+    margin-top: 5.25rem;
+    display: flex;
+    gap: 3.4375rem;
+}
+
 /* --- message --- */
 
 .message-container {
