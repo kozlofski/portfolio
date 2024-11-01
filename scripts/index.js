@@ -3,7 +3,7 @@ import errors from "./errors.js";
 import fa from "./font_awesome.js";
 import Message from "./utilities.js";
 
-let currentPage = "home";
+let currentPage = "projects";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let currentProject = 0;
@@ -306,6 +306,12 @@ const renderProjectSwitcherButton = function (
 
 // --- PROJECTS ---
 
+const renderModal = function () {
+  const body = document.querySelector("body");
+
+  appendElement("div", body, "", "blur-for-modal");
+};
+
 const renderProjects = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
@@ -316,6 +322,7 @@ const renderProjects = function (mainContainer) {
     "add-project-btn"
   );
   addProjectButton.innerHTML = `${fa.plus} Add project`;
+  addProjectButton.addEventListener("click", renderModal);
 
   const projectsContainer = appendElement(
     "div",

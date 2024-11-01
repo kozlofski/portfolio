@@ -22,8 +22,4 @@
 - clearing main container should be in separate function
 - revise reset.css
 - renderProjectsCarousel - is chosing 3 projects done in the simpliest way?
-
-- fonts:
-  Roboto 400, 700
-  League gothic 400
-  League spartan 400, 700
+- --card-filter color unnecessary?
