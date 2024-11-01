@@ -23,3 +23,4 @@
 - revise reset.css
 - renderProjectsCarousel - is chosing 3 projects done in the simpliest way?
 - --card-filter color unnecessary?
+- consider moving addProjectForm to main section

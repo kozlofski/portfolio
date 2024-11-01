@@ -283,6 +283,10 @@ article p {
     z-index: 10;
 }
 
+.add-project-container {}
+
+.add-project-form {}
+
 /* --- message --- */
 
 .message-container {

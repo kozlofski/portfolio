@@ -308,8 +308,8 @@ const renderProjectSwitcherButton = function (
 
 const renderModal = function () {
   const body = document.querySelector("body");
-
   appendElement("div", body, "", "blur-for-modal");
+  renderAddProjectForm(body);
 };
 
 const renderProjects = function (mainContainer) {
@@ -335,6 +335,16 @@ const renderProjects = function (mainContainer) {
   projectsList.forEach((project) =>
     renderProjectCard(project, projectsContainer)
   );
+};
+
+const renderAddProjectForm = function (container) {
+  const formContainer = appendElement(
+    "div",
+    container,
+    "",
+    "add-project-container"
+  );
+  const newForm = appendElement("form ", formContainer, "", "add-project-form");
 };
 
 // --- ABOUT ---
