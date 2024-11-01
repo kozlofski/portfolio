@@ -105,6 +105,16 @@ const data = {
         techs: ["HTML", "CSS", "JavaScript"],
       },
     ],
+    modal: {
+      projectTitle: {
+        label: "Project title:",
+        placeholder: "Project title",
+      },
+      technologies: {
+        label: "Technologies",
+        placeholder: "html,css,javascript",
+      },
+    },
     aboutMe: {
       background: {
         h2: "My background",
