@@ -8,15 +8,15 @@ let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let firstProjectInCarousel = 0;
 
-const render = function () {
+const initialRender = function () {
   renderHeader();
   renderMain(currentPage);
   renderFooter();
 };
 
 const renderOnPageChange = function () {
-  renderMenu();
   renderHeaderDescription(currentPage);
+  renderMenu();
   renderMain(currentPage);
   // renderFooterMenu() desktop
 };
@@ -481,4 +481,4 @@ const renderFooter = function () {
   copyright.innerHTML = `${copyrightMark}${data.footer.year}`;
 };
 
-render();
+initialRender();
