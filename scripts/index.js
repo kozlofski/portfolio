@@ -344,7 +344,12 @@ const renderAddProjectForm = function (container) {
     "",
     "add-project-container"
   );
-  const newForm = appendElement("form ", formContainer, "", "add-project-form");
+  const projectForm = appendElement("form", formContainer, "", "contact-form");
+  projectForm.name = "project-form";
+
+  const inputDataSource = data.main.modal;
+  renderInput(inputDataSource, "projectTitle", projectForm);
+  renderInput(inputDataSource, "technologies", projectForm);
 };
 
 // --- ABOUT ---
