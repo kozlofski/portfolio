@@ -6,7 +6,7 @@ import Message from "./utilities.js";
 let currentPage = "projects";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
-let currentProject = 0;
+let firstProjectInCarousel = 0;
 
 const render = function () {
   renderHeader();
@@ -233,8 +233,8 @@ const renderProjectsCarousel = function (container) {
 
   const projectsList = data.main.projects;
   const projectsListShifted = projectsList
-    .slice(currentProject)
-    .concat(projectsList.slice(0, currentProject))
+    .slice(firstProjectInCarousel)
+    .concat(projectsList.slice(0, firstProjectInCarousel))
     .slice(0, 3);
 
   projectsListShifted.forEach((project) =>
@@ -282,12 +282,12 @@ const renderProjectButtons = function (container) {
 
 const switchProject = function (direction, container) {
   if (direction === "next") {
-    currentProject++;
-    if (currentProject > totalProjects - 1) currentProject = 0;
+    firstProjectInCarousel++;
+    if (firstProjectInCarousel > totalProjects - 1) firstProjectInCarousel = 0;
     renderProjectsCarousel(container.parentNode);
   } else {
-    currentProject--;
-    if (currentProject < 0) currentProject = totalProjects;
+    firstProjectInCarousel--;
+    if (firstProjectInCarousel < 0) firstProjectInCarousel = totalProjects;
     renderProjectsCarousel(container.parentNode);
   }
 };
