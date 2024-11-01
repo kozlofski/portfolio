@@ -389,9 +389,10 @@ const renderContact = function (mainContainer) {
   const contactForm = appendElement("form", mainContainer, "", "contact-form");
   contactForm.name = "contact-form";
 
-  renderInput("name", contactForm);
-  renderInput("email", contactForm);
-  renderInput("message", contactForm);
+  const inputDataSource = data.main.contact;
+  renderInput(inputDataSource, "name", contactForm);
+  renderInput(inputDataSource, "email", contactForm);
+  renderInput(inputDataSource, "message", contactForm);
 
   const submitButton = document.createElement("input");
   submitButton.type = "submit";
@@ -404,8 +405,8 @@ const renderContact = function (mainContainer) {
   });
 };
 
-const renderInput = function (type, container) {
-  const newInputData = data.main.contact[type];
+const renderInput = function (inputDataSource, type, container) {
+  const newInputData = inputDataSource[type];
 
   const newInputContainer = appendElement(
     "div",
@@ -419,7 +420,7 @@ const renderInput = function (type, container) {
     "label",
     newInputContainer,
     newInputData.label,
-    "contact-input-label"
+    `${type}-input-label`
   );
   labelForNewInput.for = type;
 
@@ -427,7 +428,7 @@ const renderInput = function (type, container) {
     "input",
     newInputContainer,
     "",
-    "contact-input"
+    `${type}-input`
   );
   newInputElement.type = "text";
   newInputElement.name = type;
