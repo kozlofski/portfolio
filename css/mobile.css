@@ -14,6 +14,10 @@ button,
     border-radius: 0.5rem;
 }
 
+.validation-error {
+    color: var(--red);
+}
+
 /* === HEADER === */
 
 .header-container {

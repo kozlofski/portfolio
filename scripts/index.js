@@ -380,8 +380,7 @@ const renderAddProjectForm = function (container) {
 
   projectForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    // console.log(projectForm.elements[0].value);
-    addProject(projectForm);
+    if (validateNewProject(projectForm)) addProject(projectForm);
   });
 
   const cancelButton = appendElement(
@@ -395,6 +394,41 @@ const renderAddProjectForm = function (container) {
     e.preventDefault();
     deleteModal();
   });
+};
+
+const validateNewProject = function (projectForm) {
+  const newProjectName = projectForm.elements[0].value;
+  let error = "";
+
+  if (newProjectName.length < 3) error = errors.nameTooShort;
+  else if (newProjectName.length > 20) error = errors.nameTooLong;
+  if (error.length > 0) {
+    renderError("projectTitle", error);
+    return false;
+  } else {
+    clearError("projectTitle");
+  }
+
+  const techList = projectForm.elements[1].value;
+  if (techList.length === 0) {
+    error = errors.technologiesEmpty;
+    renderError("technologies", error);
+    return false;
+  } else {
+    clearError("technologies");
+  }
+
+  return true;
+};
+
+const renderError = function (inputName, errorName) {
+  const errorDiv = document.querySelector(`.${inputName}-validation-error`);
+  errorDiv.innerText = errorName;
+};
+
+const clearError = function (inputName) {
+  const errorDiv = document.querySelector(`.${inputName}-validation-error`);
+  errorDiv.innerText = "";
 };
 
 // --- ABOUT ---
