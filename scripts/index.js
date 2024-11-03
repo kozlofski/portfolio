@@ -400,7 +400,7 @@ const renderProjects = function (mainContainer) {
   addProjectButton.addEventListener("click", renderModal);
 
   const projectsContainer = appendElement(
-    "div",
+    "ul",
     mainContainer,
     "",
     "projects-container"

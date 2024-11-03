@@ -19,3 +19,4 @@
 - renderProjectsCarousel - is chosing 3 projects done in the simpliest way?
 - --card-filter color unnecessary?
 - consider moving addProjectForm to main section
+- rename card-blur class to shadow or sth like that
