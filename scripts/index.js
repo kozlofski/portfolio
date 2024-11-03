@@ -404,8 +404,8 @@ const validateNewProject = function (projectForm) {
   let nameError = "";
   let techsError = "";
 
-  if (newProjectName.length < 3) nameError = errors.nameTooShort;
-  else if (newProjectName.length > 20) nameError = errors.nameTooLong;
+  if (newProjectName.length < 3) nameError = errors.titleTooShort;
+  else if (newProjectName.length > 30) nameError = errors.titleTooLong;
   if (techList.length === 0) techsError = errors.technologiesEmpty;
 
   renderError("projectTitle", nameError);
@@ -421,11 +421,6 @@ const validateNewProject = function (projectForm) {
 const renderError = function (inputName, errorName) {
   const errorDiv = document.querySelector(`.${inputName}-validation-error`);
   errorDiv.innerText = errorName;
-};
-
-const clearError = function (inputName) {
-  const errorDiv = document.querySelector(`.${inputName}-validation-error`);
-  errorDiv.innerText = "";
 };
 
 // --- ABOUT ---
