@@ -312,6 +312,13 @@ const renderModal = function () {
   renderAddProjectForm(body);
 };
 
+const deleteModal = function () {
+  const blur = document.querySelector(".blur-for-modal");
+  const form = document.querySelector(".add-project-container");
+  blur.remove();
+  form.remove();
+};
+
 const renderProjects = function (mainContainer) {
   updateSubpageClasses(mainContainer);
 
@@ -337,6 +344,17 @@ const renderProjects = function (mainContainer) {
   );
 };
 
+const addProject = function (projectForm) {
+  const newProjectName = projectForm.elements[0].value;
+  const newProjectTechs = projectForm.elements[1].value;
+  data.main.projects.push({
+    name: newProjectName,
+    techs: [newProjectTechs],
+  });
+  deleteModal();
+  renderOnPageChange();
+};
+
 const renderAddProjectForm = function (container) {
   const formContainer = appendElement(
     "div",
@@ -350,6 +368,33 @@ const renderAddProjectForm = function (container) {
   const inputDataSource = data.main.modal;
   renderInput(inputDataSource, "projectTitle", projectForm);
   renderInput(inputDataSource, "technologies", projectForm);
+
+  const addProjectButton = appendElement(
+    "input",
+    projectForm,
+    "",
+    "send-message-button"
+  );
+  addProjectButton.type = "submit";
+  addProjectButton.value = "Add project";
+
+  projectForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // console.log(projectForm.elements[0].value);
+    addProject(projectForm);
+  });
+
+  const cancelButton = appendElement(
+    "button",
+    projectForm,
+    "",
+    "cancel-button"
+  );
+  cancelButton.innerHTML = `${fa.xmark}`;
+  cancelButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    deleteModal();
+  });
 };
 
 // --- ABOUT ---
