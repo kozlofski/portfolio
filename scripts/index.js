@@ -483,7 +483,10 @@ const renderContact = function (mainContainer) {
 
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    validateNewMessage(contactForm);
+    if (validateNewMessage(contactForm)) {
+      addMessage(contactForm);
+      contactForm.reset();
+    }
   });
 };
 
@@ -548,11 +551,22 @@ const validateNewMessage = function (contactForm) {
   renderError("email", emailError);
   renderError("message", messageError);
 
-  if (nameError.length !== 0 || emailError.length !== 0 || messageError !== 0) {
+  if (
+    nameError.length !== 0 ||
+    emailError.length !== 0 ||
+    messageError.length !== 0
+  )
     return false;
-  }
 
   return true;
+};
+
+const addMessage = function (contactForm) {
+  const name = contactForm.elements[0].value;
+  const email = contactForm.elements[1].value;
+  const message = contactForm.elements[2].value;
+
+  data.main.messages.push(new Message(name, email, message));
 };
 
 // --- MESSAGES ---
