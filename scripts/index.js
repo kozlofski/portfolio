@@ -347,9 +347,11 @@ const renderProjects = function (mainContainer) {
 const addProject = function (projectForm) {
   const newProjectName = projectForm.elements[0].value;
   const newProjectTechs = projectForm.elements[1].value;
+
+  const projectTechsList = newProjectTechs.split(",");
   data.main.projects.push({
     name: newProjectName,
-    techs: [newProjectTechs],
+    techs: projectTechsList,
   });
   deleteModal();
   renderOnPageChange();
