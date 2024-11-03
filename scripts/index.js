@@ -378,6 +378,7 @@ const renderModal = function () {
   const body = document.querySelector("body");
   appendElement("div", body, "", "blur-for-modal");
   renderAddProjectForm(body);
+  body.style.overflow = "hidden";
 };
 
 const deleteModal = function () {
@@ -385,6 +386,8 @@ const deleteModal = function () {
   const form = document.querySelector(".add-project-container");
   blur.remove();
   form.remove();
+  const body = document.querySelector("body");
+  body.style.overflow = "visible";
 };
 
 const renderProjects = function (mainContainer) {
