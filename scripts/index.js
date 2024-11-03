@@ -8,6 +8,8 @@ let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let firstProjectInCarousel = 0;
 
+// === PAGE RENDERING ===
+
 const initialRender = function () {
   renderHeader();
   renderMain(currentPage);
@@ -21,14 +23,7 @@ const renderOnPageChange = function () {
   // renderFooterMenu() desktop
 };
 
-// === HEADER ===
-
-const renderHeader = function () {
-  renderLogo(".header-logo");
-  burger();
-  renderMenu();
-  renderHeaderDescription(currentPage);
-};
+// === COMMON FUNCTIONS ===
 
 const renderLogo = function (logoContainer) {
   const logo = document.querySelector(logoContainer);
@@ -45,6 +40,82 @@ const renderLogo = function (logoContainer) {
   desktopPart.innerText = data.header.logo.desktop;
 
   logo.append(commonPart, desktopPart);
+};
+
+const updateSubpageClasses = function (container) {
+  const containerClasses = data.links.map((page) => `container-${page}`);
+  container.classList.remove(...containerClasses);
+  console.log(currentPage);
+  container.classList.add(`container-${currentPage}`);
+};
+
+const appendElement = function (htmlEl, container, innerText, elClass) {
+  const newElement = document.createElement(htmlEl);
+  if (innerText) newElement.innerText = innerText;
+  if (elClass) newElement.classList.add(elClass);
+  container.appendChild(newElement);
+  return newElement;
+};
+
+const renderProjectCard = function (project, container) {
+  const projectCard = appendElement("li", container, "", "project-card");
+  const blur = appendElement("div", projectCard, "", "card-blur");
+  appendElement("h3", projectCard, project.name);
+  const techList = appendElement("ul", projectCard, "", "tech-list");
+  const techs = project.techs;
+
+  techs.forEach((tech) => {
+    appendElement("li", techList, tech);
+  });
+
+  if (currentPage === "projects") renderDeleteButton(blur);
+};
+
+const renderInput = function (inputDataSource, type, container) {
+  const newInputData = inputDataSource[type];
+
+  const newInputContainer = appendElement(
+    "div",
+    container,
+    "",
+    "input-container"
+  );
+  newInputContainer.classList.add(`${type}-input-container`);
+
+  const labelForNewInput = appendElement(
+    "label",
+    newInputContainer,
+    newInputData.label,
+    `${type}-input-label`
+  );
+  labelForNewInput.for = type;
+
+  const newInputElement = appendElement(
+    "input",
+    newInputContainer,
+    "",
+    `${type}-input`
+  );
+  newInputElement.type = "text";
+  newInputElement.name = type;
+  newInputElement.placeholder = newInputData.placeholder;
+
+  const divForValidationErrors = appendElement(
+    "p",
+    newInputContainer,
+    "",
+    "validation-error"
+  );
+  divForValidationErrors.classList.add(`${type}-validation-error`);
+};
+
+// === HEADER ===
+
+const renderHeader = function () {
+  renderLogo(".header-logo");
+  burger();
+  renderMenu();
+  renderHeaderDescription(currentPage);
 };
 
 const burger = function () {
@@ -102,6 +173,11 @@ const renderHeaderDescription = function (currentPage) {
   pElement.innerText = pContent;
 };
 
+const renderError = function (inputName, errorName) {
+  const errorDiv = document.querySelector(`.${inputName}-validation-error`);
+  errorDiv.innerText = errorName;
+};
+
 // === MAIN ===
 
 const renderMain = function (currentPage) {
@@ -127,13 +203,6 @@ const renderMain = function (currentPage) {
   }
 };
 
-const updateSubpageClasses = function (container) {
-  const containerClasses = data.links.map((page) => `container-${page}`);
-  container.classList.remove(...containerClasses);
-  console.log(currentPage);
-  container.classList.add(`container-${currentPage}`);
-};
-
 // --- HOME ---
 
 const renderHome = function (mainContainer) {
@@ -144,15 +213,6 @@ const renderHome = function (mainContainer) {
   renderSkills(mainContainer);
   renderProjectsCarousel(mainContainer);
   renderProjectButtons(mainContainer);
-};
-
-// @TODO move this fn up to common functions
-const appendElement = function (htmlEl, container, innerText, elClass) {
-  const newElement = document.createElement(htmlEl);
-  if (innerText) newElement.innerText = innerText;
-  if (elClass) newElement.classList.add(elClass);
-  container.appendChild(newElement);
-  return newElement;
 };
 
 const renderMainPhoto = function (container) {
@@ -260,20 +320,6 @@ const renderDeleteButton = function (darkFilterDiv) {
     });
     renderOnPageChange();
   });
-};
-
-const renderProjectCard = function (project, container) {
-  const projectCard = appendElement("li", container, "", "project-card");
-  const blur = appendElement("div", projectCard, "", "card-blur");
-  appendElement("h3", projectCard, project.name);
-  const techList = appendElement("ul", projectCard, "", "tech-list");
-  const techs = project.techs;
-
-  techs.forEach((tech) => {
-    appendElement("li", techList, tech);
-  });
-
-  if (currentPage === "projects") renderDeleteButton(blur);
 };
 
 const renderProjectButtons = function (container) {
@@ -440,11 +486,6 @@ const validateNewProject = function (projectForm) {
   return true;
 };
 
-const renderError = function (inputName, errorName) {
-  const errorDiv = document.querySelector(`.${inputName}-validation-error`);
-  errorDiv.innerText = errorName;
-};
-
 // --- ABOUT ---
 
 const renderAbout = function (mainContainer) {
@@ -505,44 +546,6 @@ const renderContact = function (mainContainer) {
       contactForm.reset();
     }
   });
-};
-
-const renderInput = function (inputDataSource, type, container) {
-  const newInputData = inputDataSource[type];
-
-  const newInputContainer = appendElement(
-    "div",
-    container,
-    "",
-    "input-container"
-  );
-  newInputContainer.classList.add(`${type}-input-container`);
-
-  const labelForNewInput = appendElement(
-    "label",
-    newInputContainer,
-    newInputData.label,
-    `${type}-input-label`
-  );
-  labelForNewInput.for = type;
-
-  const newInputElement = appendElement(
-    "input",
-    newInputContainer,
-    "",
-    `${type}-input`
-  );
-  newInputElement.type = "text";
-  newInputElement.name = type;
-  newInputElement.placeholder = newInputData.placeholder;
-
-  const divForValidationErrors = appendElement(
-    "p",
-    newInputContainer,
-    "",
-    "validation-error"
-  );
-  divForValidationErrors.classList.add(`${type}-validation-error`);
 };
 
 const validateNewMessage = function (contactForm) {
