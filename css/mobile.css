@@ -230,6 +230,10 @@ article p {
     padding: 1.125rem 1.5625rem;
 }
 
+.delete-project-button {
+    z-index: 5;
+}
+
 .card-blur {
     width: 18.75rem;
     height: 28.75rem;

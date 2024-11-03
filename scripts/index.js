@@ -3,7 +3,7 @@ import errors from "./errors.js";
 import fa from "./font_awesome.js";
 import Message from "./utilities.js";
 
-let currentPage = "contact";
+let currentPage = "projects";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let firstProjectInCarousel = 0;
@@ -242,9 +242,29 @@ const renderProjectsCarousel = function (container) {
   );
 };
 
+const renderDeleteButton = function (darkFilterDiv) {
+  const deleteButton = appendElement(
+    "button",
+    darkFilterDiv,
+    "",
+    "delete-project-button"
+  );
+  deleteButton.innerHTML = fa.trashbin;
+
+  deleteButton.addEventListener("click", (e) => {
+    const projectToDelete =
+      darkFilterDiv.parentNode.querySelector("h3").innerText;
+
+    data.main.projects = data.main.projects.filter((proj) => {
+      return proj.name !== projectToDelete;
+    });
+    renderOnPageChange();
+  });
+};
+
 const renderProjectCard = function (project, container) {
   const projectCard = appendElement("li", container, "", "project-card");
-  appendElement("div", projectCard, "", "card-blur");
+  const blur = appendElement("div", projectCard, "", "card-blur");
   appendElement("h3", projectCard, project.name);
   const techList = appendElement("ul", projectCard, "", "tech-list");
   const techs = project.techs;
@@ -252,6 +272,8 @@ const renderProjectCard = function (project, container) {
   techs.forEach((tech) => {
     appendElement("li", techList, tech);
   });
+
+  if (currentPage === "projects") renderDeleteButton(blur);
 };
 
 const renderProjectButtons = function (container) {
