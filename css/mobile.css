@@ -309,9 +309,11 @@ article p {
 }
 
 .add-project-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+    position: fixed;
+    width: 18.75rem;
+    height: 21.5rem;
+    top: calc(50vh - 10.25rem);
+    left: calc(50vw - 9.375rem);
     z-index: 5;
     background-color: var(--white);
 }
