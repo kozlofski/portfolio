@@ -3,7 +3,7 @@ import errors from "./errors.js";
 import fa from "./font_awesome.js";
 import Message from "./utilities.js";
 
-let currentPage = "projects";
+let currentPage = "contact";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let firstProjectInCarousel = 0;
@@ -411,7 +411,7 @@ const validateNewProject = function (projectForm) {
   renderError("projectTitle", nameError);
   renderError("technologies", techsError);
 
-  if (nameError.length !== 0 || techError.length !== 0) {
+  if (nameError.length !== 0 || techsError.length !== 0) {
     return false;
   }
 
@@ -483,6 +483,7 @@ const renderContact = function (mainContainer) {
 
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    validateNewMessage(contactForm);
   });
 };
 
@@ -522,6 +523,36 @@ const renderInput = function (inputDataSource, type, container) {
     "validation-error"
   );
   divForValidationErrors.classList.add(`${type}-validation-error`);
+};
+
+const validateNewMessage = function (contactForm) {
+  const name = contactForm.elements[0].value;
+  const email = contactForm.elements[1].value;
+  const message = contactForm.elements[2].value;
+
+  let nameError = "";
+  let emailError = "";
+  let messageError = "";
+
+  const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+  if (name.length < 3) nameError = errors.nameTooShort;
+  else if (name.length > 20) nameError = errors.nameTooLong;
+
+  if (!email.match(emailRegex)) emailError = errors.emailNotValid;
+
+  if (message.length === 0) messageError = errors.messageEmpty;
+  else if (message.length > 100) messageError = errors.messageTooLong;
+
+  renderError("name", nameError);
+  renderError("email", emailError);
+  renderError("message", messageError);
+
+  if (nameError.length !== 0 || emailError.length !== 0 || messageError !== 0) {
+    return false;
+  }
+
+  return true;
 };
 
 // --- MESSAGES ---

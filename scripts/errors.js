@@ -5,6 +5,7 @@ const errors = {
   nameTooLong: "The name must be at most 20 characters long",
   emailNotValid: "Please enter a valid email address",
   messageEmpty: "The message cannot be empty",
+  messageTooLong: "The message must not exceed 1000 characters",
   noProjects: "There are no projects to display",
 };
 
