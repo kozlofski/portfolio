@@ -1,6 +1,6 @@
 const errors = {
   titleTooShort: "The title must be at least 3 characters long",
-  technologiesEmpty: "Please add some technologies",
+  technologiesEmpty: "Please add some technologies separated by comma",
   nameTooShort: "The name must be at least 3 characters long",
   nameTooLong: "The name must be at most 20 characters long",
   emailNotValid: "Please enter a valid email address",

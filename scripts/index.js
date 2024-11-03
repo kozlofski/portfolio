@@ -400,24 +400,19 @@ const renderAddProjectForm = function (container) {
 
 const validateNewProject = function (projectForm) {
   const newProjectName = projectForm.elements[0].value;
-  let error = "";
-
-  if (newProjectName.length < 3) error = errors.nameTooShort;
-  else if (newProjectName.length > 20) error = errors.nameTooLong;
-  if (error.length > 0) {
-    renderError("projectTitle", error);
-    return false;
-  } else {
-    clearError("projectTitle");
-  }
-
   const techList = projectForm.elements[1].value;
-  if (techList.length === 0) {
-    error = errors.technologiesEmpty;
-    renderError("technologies", error);
+  let nameError = "";
+  let techsError = "";
+
+  if (newProjectName.length < 3) nameError = errors.nameTooShort;
+  else if (newProjectName.length > 20) nameError = errors.nameTooLong;
+  if (techList.length === 0) techsError = errors.technologiesEmpty;
+
+  renderError("projectTitle", nameError);
+  renderError("technologies", techsError);
+
+  if (nameError.length !== 0 || techError.length !== 0) {
     return false;
-  } else {
-    clearError("technologies");
   }
 
   return true;
