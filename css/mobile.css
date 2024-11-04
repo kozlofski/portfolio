@@ -69,6 +69,8 @@ button,
     z-index: 1;
     border-top: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
+    box-shadow: 0 0.25rem 0.25rem #ffffff40;
+
 }
 
 .header-menu ul {
