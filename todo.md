@@ -20,3 +20,5 @@
 - --card-filter color unnecessary?
 - consider moving addProjectForm to main section
 - rename card-blur class to shadow or sth like that
+- delete colon from label project title on modal
+- rename add-project-container to modal

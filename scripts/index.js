@@ -109,6 +109,21 @@ const renderInput = function (inputDataSource, type, container) {
   divForValidationErrors.classList.add(`${type}-validation-error`);
 };
 
+const renderError = function (inputName, errorName) {
+  const errorDiv = document.querySelector(`.${inputName}-validation-error`);
+  errorDiv.innerText = errorName;
+  renderRedBorderOnError(inputName, errorName.length);
+};
+
+const renderRedBorderOnError = function (inputName, errorLength) {
+  const errorInput = document.querySelector(`.${inputName}-input`);
+  if (errorLength > 0) {
+    errorInput.classList.add(`input-error`);
+  } else {
+    errorInput.classList.remove(`input-error`);
+  }
+};
+
 // === HEADER ===
 
 const renderHeader = function () {
@@ -171,11 +186,6 @@ const renderHeaderDescription = function (currentPage) {
 
   h1Element.innerText = h1Content;
   pElement.innerText = pContent;
-};
-
-const renderError = function (inputName, errorName) {
-  const errorDiv = document.querySelector(`.${inputName}-validation-error`);
-  errorDiv.innerText = errorName;
 };
 
 // === MAIN ===
@@ -458,7 +468,7 @@ const renderAddProjectForm = function (container) {
 
   const cancelButton = appendElement(
     "button",
-    projectForm,
+    formContainer,
     "",
     "cancel-button"
   );

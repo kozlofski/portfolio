@@ -16,6 +16,9 @@ button,
 
 .validation-error {
     color: var(--red);
+    font-family: "Roboto", sans-serif;
+    font-size: 0.75rem;
+    /* background-color: grey; */
 }
 
 /* === HEADER === */
@@ -298,6 +301,8 @@ article p {
     margin-top: 5.25rem;
 }
 
+/* --- modal --- */
+
 .blur-for-modal {
     position: absolute;
     top: 0;
@@ -316,6 +321,33 @@ article p {
     left: calc(50vw - 9.375rem);
     z-index: 5;
     background-color: var(--white);
+    padding: 2.5rem 0.625rem;
+}
+
+.add-project-container label {
+    font-family: "League spartan", sans-serif;
+    font-weight: 700;
+    display: block;
+}
+
+.add-project-container input {
+    font-size: 1rem;
+    line-height: 1.171875rem;
+    width: 100%;
+    margin-top: 1.6875rem;
+    border: none;
+    border-bottom: 2px solid var(--valhalla);
+}
+
+.add-project-container .input-error {
+    border-bottom: 2px solid var(--red);
+}
+
+.add-project-container .validation-error {
+    margin-top: 0.360625rem;
+    margin-bottom: 1.92375rem;
+    line-height: 0.87875rem;
+    height: 0.87875rem;
 }
 
 .projects-container {
@@ -323,6 +355,16 @@ article p {
     display: flex;
     flex-direction: column;
     gap: 2.5625rem;
+}
+
+.add-project-container .cancel-button {
+    background-color: var(--white);
+    font-size: 0.75rem;
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    top: 0.75rem;
+    right: 0.75rem;
 }
 
 /* .add-project-form {} */
