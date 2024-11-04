@@ -416,7 +416,7 @@ const renderProjects = function (mainContainer) {
     "ul",
     mainContainer,
     "",
-    "projects-container"
+    "projects-list"
   );
 
   const projectsList = data.main.projects;

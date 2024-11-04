@@ -350,12 +350,6 @@ article p {
     height: 0.87875rem;
 }
 
-.projects-container {
-    margin: 5.25rem 0 2.5625rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5625rem;
-}
 
 .add-project-container .cancel-button {
     background-color: var(--white);
