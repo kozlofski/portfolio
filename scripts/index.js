@@ -445,7 +445,7 @@ const renderAddProjectForm = function (container) {
     "",
     "add-project-container"
   );
-  const projectForm = appendElement("form", formContainer, "", "contact-form");
+  const projectForm = appendElement("form", formContainer, "", "project-form");
   projectForm.name = "project-form";
 
   const inputDataSource = data.main.modal;
@@ -456,7 +456,7 @@ const renderAddProjectForm = function (container) {
     "input",
     projectForm,
     "",
-    "send-message-button"
+    "confirm-project-button"
   );
   addProjectButton.type = "submit";
   addProjectButton.value = "Add project";
