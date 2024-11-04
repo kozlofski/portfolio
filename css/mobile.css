@@ -117,6 +117,8 @@ h1 {
 
 /* === MAIN === */
 
+/* --- common for main ---  */
+
 main {
     color: var(--valhalla);
     min-height: calc(100vh - 500px - 232px);
@@ -134,6 +136,41 @@ article p {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.171875rem;
+}
+
+.add-project-container label,
+.contact-form label {
+    font-family: "League spartan", sans-serif;
+    font-weight: 700;
+    display: block;
+}
+
+.add-project-container .input-container,
+.contact-form .input-container {
+    width: 100%;
+}
+
+.add-project-container .input,
+.contact-form .input {
+    font-size: 1rem;
+    line-height: 1.171875rem;
+    width: 100%;
+    margin-top: 1.6875rem;
+    border: none;
+    border-bottom: 2px solid var(--valhalla);
+}
+
+.add-project-container .input-error,
+.contact-form .input-error {
+    border-bottom: 2px solid var(--red);
+}
+
+.add-project-container .validation-error,
+.contact-form .validation-error {
+    margin-top: 0.360625rem;
+    margin-bottom: 1.92375rem;
+    line-height: 0.87875rem;
+    height: 0.87875rem;
 }
 
 /* --- home --- */
@@ -332,35 +369,6 @@ article p {
     padding: 2.5rem 0.625rem;
 }
 
-.add-project-container label {
-    font-family: "League spartan", sans-serif;
-    font-weight: 700;
-    display: block;
-}
-
-.add-project-container .input-container {
-    width: 100%;
-}
-
-.add-project-container .input-container input {
-    font-size: 1rem;
-    line-height: 1.171875rem;
-    width: 100%;
-    margin-top: 1.6875rem;
-    border: none;
-    border-bottom: 2px solid var(--valhalla);
-}
-
-.add-project-container .input-error {
-    border-bottom: 2px solid var(--red);
-}
-
-.add-project-container .validation-error {
-    margin-top: 0.360625rem;
-    margin-bottom: 1.92375rem;
-    line-height: 0.87875rem;
-    height: 0.87875rem;
-}
 
 
 .add-project-container .cancel-button {
