@@ -3,7 +3,7 @@ import errors from "./errors.js";
 import fa from "./font_awesome.js";
 import Message from "./utilities.js";
 
-let currentPage = "about";
+let currentPage = "contact";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let firstProjectInCarousel = 0;
@@ -97,6 +97,7 @@ const renderInput = function (inputDataSource, type, container) {
     `${type}-input`
   );
   newInputElement.type = "text";
+  newInputElement.classList.add("input");
   newInputElement.name = type;
   newInputElement.placeholder = newInputData.placeholder;
 
@@ -537,6 +538,13 @@ const renderArticle = function (topic, container) {
 
 const renderContact = function (mainContainer) {
   updateSubpageClasses(mainContainer);
+
+  const contactHeader = appendElement(
+    "h2",
+    mainContainer,
+    data.main.contact.h2,
+    ""
+  );
 
   const contactForm = appendElement("form", mainContainer, "", "contact-form");
   contactForm.name = "contact-form";

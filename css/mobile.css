@@ -415,6 +415,21 @@ article p {
     width: 15rem;
 }
 
+/* --- contact-me --- */
+
+.container-contact {
+    padding: 5.25rem 0.625rem;
+}
+
+.contact-form {
+    margin-top: 1.875rem;
+}
+
+.send-message-button {
+    width: 100%;
+    margin-top: 2.125rem;
+}
+
 /* --- message --- */
 
 .message-container {
