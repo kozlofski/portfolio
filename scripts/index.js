@@ -330,6 +330,7 @@ const renderDeleteButton = function (darkFilterDiv) {
     data.main.projects = data.main.projects.filter((proj) => {
       return proj.name !== projectToDelete;
     });
+    totalProjects--;
     renderOnPageChange();
   });
 };
@@ -436,6 +437,7 @@ const addProject = function (projectForm) {
     name: newProjectName,
     techs: projectTechsList,
   });
+  totalProjects++;
   deleteModal();
   renderOnPageChange();
 };

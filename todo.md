@@ -15,5 +15,4 @@
 - delete colon from label project title on modal
 - rename add-project-container to modal
 - arrow buttons should dissapear if no of projects is lees than 3
-- dynamic validation
 - add arrow or plus sighn to certain buttons
