@@ -224,7 +224,7 @@ const renderHome = function (mainContainer) {
   renderAboutMe(mainContainer);
   renderSkills(mainContainer);
   renderProjectsCarousel(mainContainer);
-  renderProjectButtons(mainContainer);
+  if (totalProjects >= 3) renderProjectButtons(mainContainer);
 };
 
 const renderMainPhoto = function (container) {
