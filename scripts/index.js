@@ -3,7 +3,7 @@ import errors from "./errors.js";
 import fa from "./font_awesome.js";
 import Message from "./utilities.js";
 
-let currentPage = "projects";
+let currentPage = "contact";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let firstProjectInCarousel = 0;
@@ -108,6 +108,7 @@ const renderInput = function (inputDataSource, type, container) {
     "validation-error"
   );
   divForValidationErrors.classList.add(`${type}-validation-error`);
+  return newInputElement;
 };
 
 const renderError = function (inputName, errorName) {
@@ -450,8 +451,8 @@ const renderAddProjectForm = function (container) {
   projectForm.name = "project-form";
 
   const inputDataSource = data.main.modal;
-  renderInput(inputDataSource, "projectTitle", projectForm);
-  renderInput(inputDataSource, "technologies", projectForm);
+  const titleInput = renderInput(inputDataSource, "projectTitle", projectForm);
+  const techsInput = renderInput(inputDataSource, "technologies", projectForm);
 
   const addProjectButton = appendElement(
     "input",
@@ -464,7 +465,16 @@ const renderAddProjectForm = function (container) {
 
   projectForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    if (validateNewProject(projectForm)) addProject(projectForm);
+    if (validateNewProject(projectForm)) {
+      addProject(projectForm);
+    } else {
+      titleInput.addEventListener("input", (e) =>
+        validateNewProject(projectForm)
+      );
+      techsInput.addEventListener("input", (e) =>
+        validateNewProject(projectForm)
+      );
+    }
   });
 
   const cancelButton = appendElement(
@@ -550,9 +560,9 @@ const renderContact = function (mainContainer) {
   contactForm.name = "contact-form";
 
   const inputDataSource = data.main.contact;
-  renderInput(inputDataSource, "name", contactForm);
-  renderInput(inputDataSource, "email", contactForm);
-  renderInput(inputDataSource, "message", contactForm);
+  const nameInput = renderInput(inputDataSource, "name", contactForm);
+  const emailInput = renderInput(inputDataSource, "email", contactForm);
+  const messageInput = renderInput(inputDataSource, "message", contactForm);
 
   const submitButton = document.createElement("input");
   submitButton.type = "submit";
@@ -565,6 +575,16 @@ const renderContact = function (mainContainer) {
     if (validateNewMessage(contactForm)) {
       addMessage(contactForm);
       contactForm.reset();
+    } else {
+      nameInput.addEventListener("input", (e) =>
+        validateNewMessage(contactForm)
+      );
+      emailInput.addEventListener("input", (e) =>
+        validateNewMessage(contactForm)
+      );
+      messageInput.addEventListener("input", (e) =>
+        validateNewMessage(contactForm)
+      );
     }
   });
 };

@@ -1,15 +1,7 @@
-- years of experience in technologies could be dynamically computed based on year of beginning of learning
-- footer could be sticked to bottom
+- should mobile menu hide after selecting subpage?
 - move tests (input length etc.) to separate module
-- move render functions to separate modules
 - unify button class names
 - rethink class names for subcontainers
-- separate functions for appending h2, p, etc.
-- add descriptive classes to main containers dynamically on page change
-- delete unnecessary arrow functions from forEach'es (simple callback without args), like in renderMessage()
-- all hiding/unhiding should be done in CSS via classes
-- add delete buttons to cards on projects view
-- should mobile menu hide after selecting subpage?
 - contact me h2 ommited
 - interline on mobile menu to fix
 - mobile menu should not hide after clicking
@@ -22,3 +14,6 @@
 - rename card-blur class to shadow or sth like that
 - delete colon from label project title on modal
 - rename add-project-container to modal
+- arrow buttons should dissapear if no of projects is lees than 3
+- dynamic validation
+- add arrow or plus sighn to certain buttons
