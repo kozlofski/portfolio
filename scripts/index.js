@@ -3,7 +3,7 @@ import errors from "./errors.js";
 import fa from "./font_awesome.js";
 import Message from "./utilities.js";
 
-let currentPage = "projects";
+let currentPage = "about";
 let mobileMenuOpened = false;
 let totalProjects = data.main.projects.length;
 let firstProjectInCarousel = 0;

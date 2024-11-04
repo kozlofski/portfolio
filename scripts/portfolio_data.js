@@ -118,11 +118,11 @@ const data = {
     aboutMe: {
       background: {
         h2: "My background",
-        p: "Lorem",
+        p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at dolor sem. Nam aliquet mi eget lacus laoreet, sit amet bibendum enim rhoncus. Etiam ex mi, finibus eget euismod non, lobortis sit amet orci. Aliquam sed mauris nibh. Quisque tempor suscipit sollicitudin. Praesent quis volutpat lorem. Etiam cursus interdum magna vitae dapibus. Morbi nunc dui, luctus vitae enim vitae, pretium sollicitudin diam. Proin tempor nulla odio. Duis sem urna, porttitor at hendrerit eget, molestie non est. Vivamus ullamcorper egestas finibus. Donec iaculis lacus non quam finibus, efficitur blandit leo vestibulum. Vivamus pellentesque consequat pharetra.",
       },
       hobbies: {
         h2: "My hobbies and interests",
-        p: "Lorem ",
+        p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at dolor sem. Nam aliquet mi eget lacus laoreet, sit amet bibendum enim rhoncus. Etiam ex mi, finibus eget euismod non, lobortis sit amet orci. Aliquam sed mauris nibh. Quisque tempor suscipit sollicitudin. Praesent quis volutpat lorem. Etiam cursus interdum magna vitae dapibus. Morbi nunc dui, luctus vitae enim vitae, pretium sollicitudin diam. Proin tempor nulla odio. Duis sem urna, porttitor at hendrerit eget, molestie non est. Vivamus ullamcorper egestas finibus. Donec iaculis lacus non quam finibus, efficitur blandit leo vestibulum. Vivamus pellentesque consequat pharetra.",
       },
     },
     contact: {
