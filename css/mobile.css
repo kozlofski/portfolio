@@ -119,6 +119,7 @@ h1 {
 
 main {
     color: var(--valhalla);
+    min-height: calc(100vh - 500px - 232px);
 }
 
 main h2 {
