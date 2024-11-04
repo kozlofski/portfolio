@@ -270,6 +270,7 @@ article p {
     position: relative;
     filter: drop-shadow(0, 4px, 4px, #00000040);
     padding: 1.125rem 1.5625rem;
+    box-shadow: 0 0.25rem 0.25rem #00000040;
 }
 
 .delete-project-button {
