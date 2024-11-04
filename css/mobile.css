@@ -439,6 +439,13 @@ article p {
     line-height: 0.92rem;
 }
 
+.container-messages {
+    padding: 5.25rem 0.625rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5.25rem;
+}
+
 /* === FOOTER === */
 
 .footer-container {
