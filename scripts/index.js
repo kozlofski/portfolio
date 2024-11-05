@@ -172,7 +172,6 @@ const renderMenu = function (container) {
     menuList.appendChild(item);
     item.addEventListener("click", function (e) {
       currentPage = link;
-      toggleMobileMenu();
       renderOnPageChange();
     });
     if (link === currentPage) {
