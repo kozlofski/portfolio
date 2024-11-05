@@ -18,8 +18,10 @@ const initialRender = function () {
 
 const renderOnPageChange = function () {
   renderHeaderDescription(currentPage);
-  renderMenu();
+  renderMenu(".header-menu");
   renderMain(currentPage);
+  renderMenu(".footer-menu");
+
   // renderFooterMenu() desktop
 };
 
@@ -656,9 +658,7 @@ const renderMessage = function (message, container) {
 // === FOOTER ===
 
 const renderFooter = function () {
-  if (window.innerWidth >= 768) {
-    // @TODO render links in desktop
-  }
+  renderMenu(".footer-menu");
   const footerEmail = document.querySelector(".email");
   footerEmail.innerText = data.footer.email;
   const footerPhone = document.querySelector(".phone");

@@ -76,3 +76,27 @@ main {
     width: 22.5rem;
     height: 28.75rem;
 }
+
+/* === FOOTER === */
+
+footer {
+    padding: 3.75rem 7.5rem;
+    height: 400px;
+}
+
+.footer-container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-and-copyright {
+    margin: 0;
+}

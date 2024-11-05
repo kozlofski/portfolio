@@ -470,8 +470,15 @@ article p {
 
 /* === FOOTER === */
 
-.footer-container {
+footer {
     height: 232px;
+}
+
+.footer-menu {
+    display: none;
+}
+
+.footer-container {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 1rem;
