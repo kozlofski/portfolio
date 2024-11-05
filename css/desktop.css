@@ -33,7 +33,7 @@
 }
 
 h1 {
-    width: fit-content;
+    max-width: none;
 }
 
 /* === MAIN === */
