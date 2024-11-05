@@ -1,5 +1,6 @@
-container {
+.container {
     max-width: 1920px;
+    margin: 0 auto;
 }
 
 /* === HEADER === */
@@ -114,6 +115,37 @@ main {
     margin: 0 auto;
 }
 
+/* --- contact --- */
+
+.container-contact {
+    padding: 5.25rem 7.5rem;
+}
+
+.contact-form {
+    display: grid;
+    column-gap: 6.875rem;
+    grid-template-areas: "name email"
+        "message message"
+        "send-message send-message";
+}
+
+.name-input-container {
+    grid-area: name;
+}
+
+.email-input-container {
+    grid-area: email;
+}
+
+.message-input-container {
+    grid-area: message;
+}
+
+.send-message-button {
+    grid-area: send-message;
+    width: 15rem;
+    margin: 0 auto;
+}
 
 /* === FOOTER === */
 
