@@ -1,10 +1,6 @@
-- should mobile menu hide after selecting subpage?
 - move tests (input length etc.) to separate module
 - unify button class names
 - rethink class names for subcontainers
-- contact me h2 ommited
-- interline on mobile menu to fix
-- mobile menu should not hide after clicking
 - clearing main container should be in separate function
 - revise reset.css
 - renderProjectsCarousel - is chosing 3 projects done in the simpliest way?
@@ -14,5 +10,7 @@
 - delete colon from label project title on modal
 - rename add-project-container to modal
 - add arrow or plus sign to certain buttons
-- position logo and menu absoplute, and add flex column to h1 and it's p
+- position logo and menu absolute, and add flex column to h1 and it's p
 - "no projects to display"
+- This: Poniżej 1024px strzałki zmieniają się odpowiednio lewa strzałka strzałka w górę, prawa strzałka - strzałka w dół (Ponieważ ustawiamy karty jedna pod drugą).
+- consider moving literal values to separate .js file
