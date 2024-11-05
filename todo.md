@@ -15,3 +15,4 @@
 - rename add-project-container to modal
 - add arrow or plus sign to certain buttons
 - position logo and menu absoplute, and add flex column to h1 and it's p
+- "no projects to display"

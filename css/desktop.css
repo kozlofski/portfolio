@@ -4,6 +4,11 @@
     display: inline;
 }
 
+.header-container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
 .fa-bars {
     /* @TODO specificity is not the problem here... */
     /* maybe create own class */
@@ -38,6 +43,7 @@ h1 {
 }
 
 /* === MAIN === */
+
 main {
     min-height: calc(100vh - 500px - 400px);
 }
