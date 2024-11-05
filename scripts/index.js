@@ -147,21 +147,24 @@ const toggleMobileMenu = function () {
   const menuDiv = document.querySelector(".header-menu");
   if (mobileMenuOpened) {
     mobileMenuOpened = false;
-    menuDiv.style.display = "none";
+    menuDiv.classList.remove("mobile-menu-opened");
+    menuDiv.classList.add("mobile-menu-closed");
     burger.classList.remove("menu-opened");
   } else {
     mobileMenuOpened = true;
-    menuDiv.style.display = "block";
+    menuDiv.classList.remove("mobile-menu-closed");
+    menuDiv.classList.add("mobile-menu-opened");
     burger.classList.add("menu-opened");
   }
 };
 
 const renderMenu = function () {
   const menuDiv = document.querySelector(".header-menu");
-  menuDiv.style.display = "none";
   menuDiv.innerHTML = "";
+
   const menuList = document.createElement("ul");
   menuDiv.appendChild(menuList);
+
   const links = data.links;
   for (const link of links) {
     const item = document.createElement("li");
@@ -171,7 +174,6 @@ const renderMenu = function () {
       currentPage = link;
       toggleMobileMenu();
       renderOnPageChange();
-      // render();
     });
     if (link === currentPage) {
       item.classList.add("selected-link");
