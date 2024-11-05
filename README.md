@@ -11,3 +11,5 @@
 - w projekcie przycisk "Add project" nie ma cienia w widoku desktopowym - chyba to przeoczenie, bo każdy inny przycisk posiada cienie
 
 - dynamiczna walidacja pól formularzy jest odpalana dopiero po pierwszym naciśnięciu "send message" lub "add project" - po to, żeby nie denerwowała po wpisaniu pierwszych znaków
+
+- dodałem dodatkowy breakpoint dla nagłówka (logo i menu) dla desktopu, aby menu wyświetlało się w całości
