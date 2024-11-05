@@ -5,7 +5,6 @@
 - contact me h2 ommited
 - interline on mobile menu to fix
 - mobile menu should not hide after clicking
-- add shadows
 - clearing main container should be in separate function
 - revise reset.css
 - renderProjectsCarousel - is chosing 3 projects done in the simpliest way?
@@ -14,5 +13,5 @@
 - rename card-blur class to shadow or sth like that
 - delete colon from label project title on modal
 - rename add-project-container to modal
-- arrow buttons should dissapear if no of projects is lees than 3
-- add arrow or plus sighn to certain buttons
+- add arrow or plus sign to certain buttons
+- position logo and menu absoplute, and add flex column to h1 and it's p

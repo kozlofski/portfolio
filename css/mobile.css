@@ -3,6 +3,10 @@ header, footer {
     color: var(--white);
 }
 
+body {
+    /*  */
+}
+
 button,
 .send-message-button,
 .confirm-project-button {
@@ -29,10 +33,14 @@ button,
 .header-container {
     height: 500px;
     margin: 0;
-    padding-top: 10px;
+    position: relative;
 }
 
 .logo-and-navbar {
+    position: absolute;
+    background-color: #00000000;
+    top: 10px;
+    width: 100%;
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
@@ -98,13 +106,21 @@ button,
     color: var(--grey);
 }
 
+.title-and-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 h1 {
     font-family: "League Gothic", sans-serif;
     font-weight: 400;
     font-size: 6rem;
     line-height: 6rem;
     text-align: center;
-    margin: 3.5rem auto 0 auto;
+    /* margin: 3.5rem auto 0 auto; */
     max-width: 360px;
 }
 
