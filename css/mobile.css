@@ -493,6 +493,18 @@ footer {
     line-height: 2.875rem;
 }
 
+.contact-and-copyright p {
+    line-height: 1rem;
+}
+
+.contact-and-copyright .email {
+    margin-bottom: 1.875rem;
+}
+
+.contact-and-copyright .phone {
+    margin-bottom: 1.45rem;
+}
+
 .copyright {
     font-size: 1.6875rem;
 }
