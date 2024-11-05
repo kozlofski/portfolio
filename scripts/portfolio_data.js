@@ -42,11 +42,11 @@ const data = {
         skillList: [
           {
             tech: "HTML",
-            exp: 4,
+            exp: 2,
           },
           {
             tech: "CSS",
-            exp: 4,
+            exp: 2,
           },
           {
             tech: "JavaScript",
@@ -58,11 +58,11 @@ const data = {
           },
           {
             tech: "Java",
-            exp: 3,
+            exp: 4,
           },
           {
             tech: "VSCode",
-            exp: 3,
+            exp: 4,
           },
           {
             tech: "Git",
@@ -78,11 +78,11 @@ const data = {
           },
           {
             tech: "Linux",
-            exp: 5,
+            exp: 4,
           },
           {
             tech: "Bash",
-            exp: 3,
+            exp: 4,
           },
         ],
       },

@@ -3,10 +3,6 @@ header, footer {
     color: var(--white);
 }
 
-body {
-    /*  */
-}
-
 button,
 .send-message-button,
 .confirm-project-button {
