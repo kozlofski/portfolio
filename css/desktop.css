@@ -54,3 +54,15 @@ h1 {
     grid-auto-flow: rows;
     justify-content: space-between;
 }
+
+.projects-carousel {
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5625rem;
+}
+
+.project-card {
+    width: 22.5rem;
+    height: 28.75rem;
+}
