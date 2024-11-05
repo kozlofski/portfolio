@@ -107,6 +107,14 @@ main {
 
 }
 
+/* --- about --- */
+
+.container-about {
+    max-width: 59.875rem;
+    margin: 0 auto;
+}
+
+
 /* === FOOTER === */
 
 footer {
