@@ -131,7 +131,7 @@ const renderRedBorderOnError = function (inputName, errorLength) {
 const renderHeader = function () {
   renderLogo(".header-logo");
   burger();
-  renderMenu();
+  renderMenu(".header-menu");
   renderHeaderDescription(currentPage);
 };
 
@@ -158,8 +158,8 @@ const toggleMobileMenu = function () {
   }
 };
 
-const renderMenu = function () {
-  const menuDiv = document.querySelector(".header-menu");
+const renderMenu = function (container) {
+  const menuDiv = document.querySelector(container);
   menuDiv.innerHTML = "";
 
   const menuList = document.createElement("ul");
@@ -179,6 +179,8 @@ const renderMenu = function () {
       item.classList.add("selected-link");
     }
   }
+
+  return menuDiv;
 };
 
 const renderHeaderDescription = function (currentPage) {
