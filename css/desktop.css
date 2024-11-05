@@ -97,6 +97,16 @@ main {
     justify-content: space-between;
 }
 
+/* --- modal --- */
+
+.add-project-container {
+    top: calc(50vh - 12.5%);
+    left: calc(50vw - 25%);
+    width: 50%;
+    padding: 3.75rem min(4%, 7.5rem) 4rem min(4%, 7.5rem);
+
+}
+
 /* === FOOTER === */
 
 footer {
