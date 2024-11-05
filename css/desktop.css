@@ -90,13 +90,28 @@ footer {
     padding: 0;
     display: flex;
     justify-content: space-between;
+    height: 100%;
 }
 
 .footer-menu {
+    display: block;
+}
+
+.footer-menu ul {
     display: flex;
     flex-direction: column;
+    gap: 1.875rem;
+}
+
+.footer-menu li {
+    line-height: 18.75px;
 }
 
 .contact-and-copyright {
     margin: 0;
+    justify-content: flex-end;
+}
+
+.contact-and-copyright .phone {
+    margin-bottom: 1.875rem;
 }

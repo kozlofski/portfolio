@@ -21,8 +21,6 @@ const renderOnPageChange = function () {
   renderMenu(".header-menu");
   renderMain(currentPage);
   renderMenu(".footer-menu");
-
-  // renderFooterMenu() desktop
 };
 
 // === COMMON FUNCTIONS ===
