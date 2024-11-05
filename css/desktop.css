@@ -47,3 +47,10 @@ h1 {
     padding-top: 32.46%;
     background-position: top 0 left 0;
 }
+
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 11.375rem);
+    grid-auto-flow: rows;
+    justify-content: space-between;
+}
