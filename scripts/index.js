@@ -221,10 +221,10 @@ const renderMain = function (currentPage) {
 
 const renderHome = function (mainContainer) {
   updateSubpageClasses(mainContainer);
-
-  renderMainPhoto(mainContainer);
-  renderAboutMe(mainContainer);
-  renderSkills(mainContainer);
+  const meAndSkills = appendElement("div", mainContainer, "", "me-and-skills");
+  renderMainPhoto(meAndSkills);
+  renderAboutMe(meAndSkills);
+  renderSkills(meAndSkills);
   renderProjectsCarousel(mainContainer);
   if (totalProjects >= 3) renderProjectButtons(mainContainer);
 };
