@@ -6,6 +6,7 @@
 
 .fa-bars {
     /* @TODO specificity is not the problem here... */
+    /* maybe create own class */
     display: none !important
 }
 
@@ -37,6 +38,9 @@ h1 {
 }
 
 /* === MAIN === */
+main {
+    min-height: calc(100vh - 500px - 400px);
+}
 
 .me-and-skills {
     max-width: 59.875rem;
