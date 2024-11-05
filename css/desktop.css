@@ -4,6 +4,9 @@
 }
 
 /* === HEADER === */
+header {
+    padding: 0 7.5rem;
+}
 
 .logo-desktop-header {
     display: inline;
@@ -12,6 +15,7 @@
 .header-container {
     max-width: 1920px;
     margin: 0 auto;
+    /* padding: 0 3.75rem; */
 }
 
 .fa-bars {
@@ -35,8 +39,19 @@
     flex-direction: row;
     height: 2.625rem;
     width: fit-content;
+    /* gap: calc(min(1.875rem, 2%)); */
     gap: 1.875rem;
     align-items: center;
+}
+
+@media (max-width: 930px) {
+    header {
+        padding: 0 5rem;
+    }
+
+    .header-menu ul {
+        gap: 0.5rem;
+    }
 }
 
 .header-menu li {
@@ -51,6 +66,7 @@ h1 {
 
 main {
     min-height: calc(100vh - 500px - 400px);
+    padding: 0 7.5rem;
 }
 
 /* --- home --- */
@@ -117,10 +133,6 @@ main {
 
 /* --- contact --- */
 
-.container-contact {
-    padding: 5.25rem 7.5rem;
-}
-
 .contact-form {
     display: grid;
     column-gap: 6.875rem;
@@ -145,6 +157,12 @@ main {
     grid-area: send-message;
     width: 15rem;
     margin: 0 auto;
+}
+
+/* --- messages --- */
+
+.container-messages {
+    padding: 5.25rem 7.5rem;
 }
 
 /* === FOOTER === */
