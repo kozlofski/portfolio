@@ -535,11 +535,17 @@ const renderContact = function (mainContainer) {
   const emailInput = renderInput(inputDataSource, "email", contactForm);
   const messageInput = renderInput(inputDataSource, "message", contactForm);
 
-  const submitButton = document.createElement("input");
+  const submitButton = appendElement(
+    "input",
+    contactForm,
+    "",
+    "send-message-button"
+  );
+  // const submitButton = document.createElement("input");
   submitButton.type = "submit";
   submitButton.value = "Send message";
-  submitButton.classList.add("send-message-button");
-  contactForm.appendChild(submitButton);
+  // submitButton.classList.add("send-message-button");
+  // contactForm.appendChild(submitButton);
 
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
