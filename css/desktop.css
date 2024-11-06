@@ -100,6 +100,14 @@ main {
     height: 28.75rem;
 }
 
+@media (max-width: 1023px) {
+
+    .switch-proj-btn .fa-arrow-left,
+    .switch-proj-btn .fa-arrow-right {
+        transform: rotate(90deg);
+    }
+}
+
 /* --- projects --- */
 
 
