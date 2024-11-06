@@ -55,7 +55,7 @@ const appendElement = function (htmlEl, container, innerText, elClass) {
 
 const renderProjectCard = function (project, container) {
   const projectCard = appendElement("li", container, "", "project-card");
-  const blur = appendElement("div", projectCard, "", "card-blur");
+  const blur = appendElement("div", projectCard, "", "card-darkening");
   appendElement("h3", projectCard, project.name);
   const techList = appendElement("ul", projectCard, "", "tech-list");
   const techs = project.techs;
