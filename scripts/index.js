@@ -376,7 +376,7 @@ const renderModal = function () {
 
 const deleteModal = function () {
   const blur = document.querySelector(".blur-for-modal");
-  const form = document.querySelector(".add-project-container");
+  const form = document.querySelector(".modal");
   blur.remove();
   form.remove();
   const body = document.querySelector("body");
@@ -421,12 +421,7 @@ const addProject = function (projectForm) {
 };
 
 const renderAddProjectForm = function (container) {
-  const formContainer = appendElement(
-    "div",
-    container,
-    "",
-    "add-project-container"
-  );
+  const formContainer = appendElement("div", container, "", "modal");
   const projectForm = appendElement("form", formContainer, "", "project-form");
   projectForm.name = "project-form";
 

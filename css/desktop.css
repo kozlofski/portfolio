@@ -126,7 +126,7 @@ main {
 
 /* --- modal --- */
 
-.add-project-container {
+.modal {
     top: calc(50vh - 12.5%);
     left: calc(50vw - 25%);
     width: 50%;
