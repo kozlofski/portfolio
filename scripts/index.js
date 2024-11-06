@@ -280,10 +280,8 @@ const renderYearsIndicator = function (years, container) {
   const indicatorElement = appendElement("div", container, "", "indicator");
 
   for (let i = 1; i <= 5; i++) {
-    const dot = document.createElement("div");
-    dot.classList.add("indicator-dot");
+    const dot = appendElement("div", indicatorElement, "", "indicator-dot");
     if (i <= years) dot.classList.add("indicator-dot-filled");
-    indicatorElement.appendChild(dot);
   }
 };
 
