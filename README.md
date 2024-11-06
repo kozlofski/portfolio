@@ -6,6 +6,4 @@
 
 - dynamiczna walidacja pól formularzy jest odpalana dopiero po pierwszym naciśnięciu "send message" lub "add project" - po to, żeby nie denerwowała po wpisaniu pierwszych znaków
 
-- dodałem dodatkowy breakpoint dla nagłówka (logo i menu) dla desktopu, aby menu wyświetlało się w całości
-
 - dodałem zmianę kursora (pointer) gdy najedziemy na element menu (tylko w desktopie)
