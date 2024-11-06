@@ -3,6 +3,11 @@
     margin: 0 auto;
 }
 
+.header-menu:hover,
+.footer-menu:hover {
+    cursor: pointer;
+}
+
 /* === HEADER === */
 header {
     padding: 0 7.5rem;
