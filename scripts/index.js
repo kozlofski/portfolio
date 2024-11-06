@@ -192,6 +192,7 @@ const renderHeaderDescription = function (currentPage) {
 const renderMain = function (currentPage) {
   const mainContainer = document.querySelector(".main-container");
   mainContainer.innerHTML = "";
+  updateSubpageClasses(mainContainer);
 
   switch (currentPage) {
     case "home":
@@ -215,7 +216,6 @@ const renderMain = function (currentPage) {
 // --- HOME ---
 
 const renderHome = function (mainContainer) {
-  updateSubpageClasses(mainContainer);
   const meAndSkills = appendElement("div", mainContainer, "", "me-and-skills");
   renderMainPhoto(meAndSkills);
   renderAboutMe(meAndSkills);
@@ -401,8 +401,6 @@ const deleteModal = function () {
 };
 
 const renderProjects = function (mainContainer) {
-  updateSubpageClasses(mainContainer);
-
   const addProjectButton = appendElement(
     "button",
     mainContainer,
@@ -512,8 +510,6 @@ const validateNewProject = function (projectForm) {
 // --- ABOUT ---
 
 const renderAbout = function (mainContainer) {
-  updateSubpageClasses(mainContainer);
-
   renderMainPhoto(mainContainer);
 
   renderArticle("background", mainContainer);
@@ -546,8 +542,6 @@ const renderArticle = function (topic, container) {
 // --- CONTACT ---
 
 const renderContact = function (mainContainer) {
-  updateSubpageClasses(mainContainer);
-
   const contactHeader = appendElement(
     "h2",
     mainContainer,
@@ -632,8 +626,6 @@ const addMessage = function (contactForm) {
 // --- MESSAGES ---
 
 const renderMessages = function (mainContainer) {
-  updateSubpageClasses(mainContainer);
-
   const messagesData = data.main.messages;
   messagesData.forEach((message) => renderMessage(message, mainContainer));
 };
