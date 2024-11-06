@@ -42,7 +42,6 @@ const renderLogo = function (logoContainer) {
 const updateSubpageClasses = function (container) {
   const containerClasses = data.links.map((page) => `container-${page}`);
   container.classList.remove(...containerClasses);
-  console.log(currentPage);
   container.classList.add(`container-${currentPage}`);
 };
 
