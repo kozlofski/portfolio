@@ -117,11 +117,11 @@ main {
     max-width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, 22.5rem);
-    /* grid-template-columns: repeat(4, 1fr); */
     grid-auto-flow: rows;
     column-gap: 2.5625rem;
     row-gap: 5.25rem;
     justify-content: space-between;
+    margin-bottom: 5.25rem;
 }
 
 /* --- modal --- */
@@ -166,7 +166,7 @@ main {
 .send-message-button {
     grid-area: send-message;
     width: 15rem;
-    margin: 0 auto;
+    margin: 1.5rem auto 0 auto;
 }
 
 /* --- messages --- */

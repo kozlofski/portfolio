@@ -1,4 +1,3 @@
 - move tests (input length etc.) to separate module
-- add arrow or plus sign to certain buttons
 - consider moving literal values to separate .js file
 - email filed on desktop moves on error display
