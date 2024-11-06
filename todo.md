@@ -1,3 +1,0 @@
-- move tests (input length etc.) to separate module
-- consider moving literal values to separate .js file
-- email filed on desktop moves on error display
