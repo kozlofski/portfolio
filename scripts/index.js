@@ -225,11 +225,9 @@ const renderHome = function (mainContainer) {
 };
 
 const renderMainPhoto = function (container) {
-  const photoDiv = document.createElement("div");
+  const photoDiv = appendElement("div", container, "", "main-photo");
   const imgUrl = data.main.home.aboutMe.photoUrl;
   photoDiv.style.backgroundImage = `url(${imgUrl})`;
-  photoDiv.classList.add("main-photo");
-  container.appendChild(photoDiv);
 };
 
 const renderAboutMe = function (container) {
