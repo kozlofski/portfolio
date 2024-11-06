@@ -525,12 +525,7 @@ const renderArticle = function (topic, container) {
 // --- CONTACT ---
 
 const renderContact = function (mainContainer) {
-  const contactHeader = appendElement(
-    "h2",
-    mainContainer,
-    data.main.contact.h2,
-    ""
-  );
+  appendElement("h2", mainContainer, data.main.contact.h2, "");
 
   const contactForm = appendElement("form", mainContainer, "", "contact-form");
   contactForm.name = "contact-form";

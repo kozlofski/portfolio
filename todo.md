@@ -15,4 +15,3 @@
 - This: Poniżej 1024px strzałki zmieniają się odpowiednio lewa strzałka strzałka w górę, prawa strzałka - strzałka w dół (Ponieważ ustawiamy karty jedna pod drugą).
 - consider moving literal values to separate .js file
 - white space below footer on mobile view
-- delete contact header const from renderContact()
