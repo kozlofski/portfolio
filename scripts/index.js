@@ -126,12 +126,12 @@ const renderRedBorderOnError = function (inputName, errorLength) {
 
 const renderHeader = function () {
   renderLogo(".header-logo");
-  burger();
+  renderBurger();
   renderMenu(".header-menu");
   renderHeaderDescription(currentPage);
 };
 
-const burger = function () {
+const renderBurger = function () {
   const burger = document.querySelector(".fa-bars");
   burger.addEventListener("click", (e) => {
     toggleMobileMenu();
