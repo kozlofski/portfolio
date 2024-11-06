@@ -336,22 +336,8 @@ const renderProjectButtons = function (container) {
     "project-btns-container"
   );
 
-  renderProjectSwitcherButton(
-    fa.leftArrow,
-    "prev-proj-btn",
-    (e) => {
-      switchProject("previous", container.parentNode);
-    },
-    buttonsContainer
-  );
-  renderProjectSwitcherButton(
-    fa.rightArrow,
-    "next-proj-btn",
-    (e) => {
-      switchProject("next", container.parentNode);
-    },
-    buttonsContainer
-  );
+  renderProjectSwitcherButton("previous", buttonsContainer);
+  renderProjectSwitcherButton("next", buttonsContainer);
 };
 
 const switchProject = function (direction, container) {
@@ -366,16 +352,17 @@ const switchProject = function (direction, container) {
   }
 };
 
-const renderProjectSwitcherButton = function (
-  content,
-  className,
-  fun,
-  container
-) {
-  const newButton = appendElement("button", container, "", className);
-  newButton.innerHTML = content;
+const renderProjectSwitcherButton = function (direction, container) {
+  const newButton = appendElement("button", container);
+  if (direction === "previous") {
+    newButton.innerHTML = fa.leftArrow;
+  } else {
+    newButton.innerHTML = fa.rightArrow;
+  }
   newButton.classList.add("switch-proj-btn");
-  newButton.addEventListener("click", fun);
+  newButton.addEventListener("click", (e) => {
+    switchProject(direction, container.parentNode);
+  });
 };
 
 // --- PROJECTS ---
