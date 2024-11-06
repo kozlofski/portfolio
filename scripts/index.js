@@ -483,11 +483,7 @@ const validateNewProject = function (projectForm) {
   renderError("projectTitle", nameError);
   renderError("technologies", techsError);
 
-  if (nameError.length !== 0 || techsError.length !== 0) {
-    return false;
-  }
-
-  return true;
+  return nameError.length === 0 && techsError.length === 0;
 };
 
 // --- ABOUT ---
@@ -589,14 +585,11 @@ const validateNewMessage = function (contactForm) {
   renderError("email", emailError);
   renderError("message", messageError);
 
-  if (
-    nameError.length !== 0 ||
-    emailError.length !== 0 ||
-    messageError.length !== 0
-  )
-    return false;
-
-  return true;
+  return (
+    nameError.length === 0 &&
+    emailError.length === 0 &&
+    messageError.length === 0
+  );
 };
 
 const addMessage = function (contactForm) {
