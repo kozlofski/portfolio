@@ -106,6 +106,10 @@ main {
     .switch-proj-btn .fa-arrow-right {
         transform: rotate(90deg);
     }
+
+    .projects-carousel {
+        flex-direction: column;
+    }
 }
 
 /* --- projects --- */
