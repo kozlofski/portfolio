@@ -143,13 +143,11 @@ const toggleMobileMenu = function () {
   const menuDiv = document.querySelector(".header-menu");
   if (mobileMenuOpened) {
     mobileMenuOpened = false;
-    menuDiv.classList.remove("mobile-menu-opened");
     menuDiv.classList.add("mobile-menu-closed");
     burger.classList.remove("menu-opened");
   } else {
     mobileMenuOpened = true;
     menuDiv.classList.remove("mobile-menu-closed");
-    menuDiv.classList.add("mobile-menu-opened");
     burger.classList.add("menu-opened");
   }
 };
