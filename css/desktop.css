@@ -44,16 +44,6 @@ header {
     align-items: center;
 }
 
-@media (max-width: 930px) {
-    header {
-        padding: 0 5rem;
-    }
-
-    .header-menu ul {
-        gap: 0.5rem;
-    }
-}
-
 .header-menu li {
     height: fit-content;
 }
@@ -101,6 +91,14 @@ main {
 }
 
 @media (max-width: 1023px) {
+
+    header {
+        padding: 0 5rem;
+    }
+
+    .header-menu ul {
+        gap: 0.5rem;
+    }
 
     .switch-proj-btn .fa-arrow-left,
     .switch-proj-btn .fa-arrow-right {
