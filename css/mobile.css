@@ -176,6 +176,7 @@ article p {
     margin-top: 1.6875rem;
     border: none;
     border-bottom: 2px solid var(--valhalla);
+    border-radius: 0;
 }
 
 .add-project-container .input-error,
