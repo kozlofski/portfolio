@@ -439,6 +439,10 @@ article p {
     width: 15rem;
 }
 
+.contact-me-button .fa-arrow-right {
+    margin-right: 1.5rem;
+}
+
 /* --- contact-me --- */
 
 .container-contact {

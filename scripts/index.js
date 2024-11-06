@@ -495,9 +495,10 @@ const renderAbout = function (mainContainer) {
   const contactMeButton = appendElement(
     "button",
     mainContainer,
-    "Contact me",
+    "",
     "contact-me-button"
   );
+  contactMeButton.innerHTML = `${fa.rightArrow}Contact me`;
   contactMeButton.addEventListener("click", (e) => {
     currentPage = "contact";
     renderOnPageChange();
