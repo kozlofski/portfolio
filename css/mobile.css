@@ -361,6 +361,10 @@ article p {
     margin-top: 5.25rem;
 }
 
+.fa-plus {
+    margin-right: 1.5rem;
+}
+
 .projects-list {
     margin: 5.25rem 0 2.5625rem 0;
     display: flex;
