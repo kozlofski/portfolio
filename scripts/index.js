@@ -27,19 +27,16 @@ const renderOnPageChange = function () {
 
 const renderLogo = function (logoContainer) {
   const logo = document.querySelector(logoContainer);
-  const commonPart = document.createElement("span");
-  commonPart.classList.add("logo-common");
-  commonPart.innerText = data.header.logo.common;
+  appendElement("span", logo, data.header.logo.common, "logo-common");
+  const desktopPart = appendElement(
+    "span",
+    logo,
+    data.header.logo.desktop,
+    "logo-desktop"
+  );
 
-  const desktopPart = document.createElement("span");
-  desktopPart.classList.add("logo-desktop");
-  if (logoContainer === ".header-logo") {
+  if (logoContainer === ".header-logo")
     desktopPart.classList.add("logo-desktop-header");
-  }
-
-  desktopPart.innerText = data.header.logo.desktop;
-
-  logo.append(commonPart, desktopPart);
 };
 
 const updateSubpageClasses = function (container) {
