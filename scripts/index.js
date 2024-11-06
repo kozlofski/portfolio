@@ -537,11 +537,9 @@ const renderContact = function (mainContainer) {
     "",
     "send-message-button"
   );
-  // const submitButton = document.createElement("input");
+
   submitButton.type = "submit";
   submitButton.value = "Send message";
-  // submitButton.classList.add("send-message-button");
-  // contactForm.appendChild(submitButton);
 
   contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
