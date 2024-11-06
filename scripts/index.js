@@ -404,6 +404,9 @@ const renderProjects = function (mainContainer) {
   projectsList.forEach((project) =>
     renderProjectCard(project, projectsContainer)
   );
+
+  if (totalProjects === 0)
+    appendElement("h2", mainContainer, "There are no projects to display");
 };
 
 const addProject = function (projectForm) {
