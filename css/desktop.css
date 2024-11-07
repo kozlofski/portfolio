@@ -154,6 +154,7 @@ main {
 .contact-form {
     display: grid;
     column-gap: 6.875rem;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "name email"
         "message message"
         "send-message send-message";
