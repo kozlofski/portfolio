@@ -1,0 +1,6 @@
+body {
+    --header-height: 500px;
+    --footer-height-mobile: 232px;
+    --footer-height-desktop: 400px;
+    --max-container-width-desktop: 1920px;
+}

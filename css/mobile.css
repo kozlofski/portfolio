@@ -27,7 +27,7 @@ button,
 /* === HEADER === */
 
 .header-container {
-    height: 500px;
+    height: var(--header-height);
     margin: 0;
     position: relative;
 }
@@ -140,7 +140,7 @@ h1 {
 
 main {
     color: var(--valhalla);
-    min-height: calc(100vh - 500px - 232px);
+    min-height: calc(100vh - var(--header-height) - var(--footer-height-mobile));
 }
 
 main h2 {
@@ -481,7 +481,7 @@ article p {
 /* === FOOTER === */
 
 footer {
-    height: 232px;
+    height: var(--footer-height-mobile);
 }
 
 .footer-menu {
