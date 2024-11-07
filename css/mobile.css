@@ -372,6 +372,10 @@ article p {
     gap: 2.5625rem;
 }
 
+.no-projects-error {
+    padding-bottom: 6rem;
+}
+
 /* --- modal --- */
 
 .blur-for-modal {

@@ -406,7 +406,7 @@ const renderProjects = function (mainContainer) {
   );
 
   if (totalProjects === 0)
-    appendElement("h2", mainContainer, "There are no projects to display");
+    appendElement("h2", mainContainer, errors.noProjects, "no-projects-error");
 };
 
 const addProject = function (projectForm) {
