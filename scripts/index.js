@@ -355,9 +355,9 @@ const switchProject = function (direction, container) {
 const renderProjectSwitcherButton = function (direction, container) {
   const newButton = appendElement("button", container);
   if (direction === "previous") {
-    newButton.innerHTML = fa.leftArrow;
+    newButton.innerHTML = fa.upArrow;
   } else {
-    newButton.innerHTML = fa.rightArrow;
+    newButton.innerHTML = fa.downArrow;
   }
   newButton.classList.add("switch-proj-btn");
   newButton.addEventListener("click", (e) => {

@@ -105,13 +105,16 @@ main {
         gap: 0.5rem;
     }
 
-    .switch-proj-btn .fa-arrow-left,
-    .switch-proj-btn .fa-arrow-right {
-        transform: rotate(90deg);
-    }
-
     .projects-carousel {
         flex-direction: column;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .switch-proj-btn .fa-arrow-up,
+    .switch-proj-btn .fa-arrow-down {
+        transform: rotate(-90deg);
     }
 }
 
