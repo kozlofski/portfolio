@@ -18,22 +18,17 @@ header {
 }
 
 .header-container {
-    max-width: 1920px;
     margin: 0 auto;
-    /* padding: 0 3.75rem; */
 }
 
 .fa-bars {
     /* @TODO specificity is not the problem here... */
-    /* maybe create own class */
     display: none !important
 }
 
 .header-menu {
     display: block;
     position: static;
-    /* top: 10px;
-    left: 10px; */
     border: none;
     box-shadow: none;
     height: fit-content;
@@ -44,7 +39,6 @@ header {
     flex-direction: row;
     height: 2.625rem;
     width: fit-content;
-    /* gap: calc(min(1.875rem, 2%)); */
     gap: 1.875rem;
     align-items: center;
 }
