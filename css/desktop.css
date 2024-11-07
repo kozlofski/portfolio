@@ -21,9 +21,8 @@ header {
     margin: 0 auto;
 }
 
-.fa-bars {
-    /* @TODO specificity is not the problem here... */
-    display: none !important
+header .fa-bars {
+    display: none;
 }
 
 .header-menu {
